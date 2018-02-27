@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/DMPbase.css" />
+    <link rel="stylesheet" href="../css/DmpFine.css" />
+    <style>
+        .DmpFine-textInput01,.DmpFine-textSelect1{
+            width: calc((100% - 60px)/4);
+        }
+        .main_cont {
+            width: 1080px;
+            background: url(../images/bg_main_left.png) repeat-y #f5f5f5;
+            /* min-height: calc(100vh - 20px); */
+            padding-bottom: 20px;
+            min-height: 100%;
+        }
+        .DmpFine-box-title {
+            background: rgba(245,245,245,1);
+            border-radius: 5px 5px 0 0;
+            border-bottom: 0px;
+        }
+        .DmpFine-mainBox {
+            padding-top: 75px;
+        }
+        .DmpFine-box-left{
+            width: 280px;
+            height: 340px;
+            float: left;
+            border: 1px solid #dddddd;
+            overflow-y: auto;
+            margin-right: 20px;
+            padding: 20px 13px 20px 10px;
+        }
+        .DmpFine-box-right{
+            width: 704px;
+            float: left;
+        }
+        .eachartlist{
+            height: 340px;
+            border: 1px solid #dddddd;
+        }
+        .DmpFine-mainBox ::-webkit-scrollbar-track
+        {
+            /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+            border-radius: 0px;
+            background-color: #F5F5F5;
+            box-sizing: border-box;
+        }
+
+        .DmpFine-mainBox ::-webkit-scrollbar
+        {
+            width: 6px;
+            background-color: #F5F5F5;
+            box-sizing: border-box;
+        }
+
+        .DmpFine-mainBox ::-webkit-scrollbar-thumb
+        {
+            border-radius: 4px;
+            /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+            background-color: #999;
+        }
+        .function-bar{
+            width: 255px;
+            height: 34px;
+            line-height: 34px;
+            border: 1px solid #dddddd;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            background:rgba(249,249,249,1);
+        }
+        .function-bar .data-name{
+            width: 190px;
+            height: 24px;
+            line-height: 24px;
+            float: left;
+            font-size: 14px;
+            border-right: 1px solid #dddddd;
+        }
+        .function-bar .data-numb{
+             width: 63px;
+             height: 24px;
+             line-height: 24px;
+             text-align: center;
+             float: left;
+         }
+        .function-bar .order{
+            float: left;
+            width: 14px;
+            height: 14px;
+            background-color: #FFCFB7;
+            color: #FF5400;
+            line-height: 14px;
+            text-align: center;
+            font-size: 10px;
+            margin: 5px 10px;
+
+        }
+        .flow-path .arrow{
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .flow-path .arrow .head{
+            width: 44px;
+            height: 18px;
+            background-color: #FF5400;
+            margin: 0 auto;
+        }
+        .flow-path .arrow .foot{
+            height: 0px;
+            width:  0px;
+            margin: 0 auto;
+            border-top:18px solid #FF5400;
+            border-left: 37px solid transparent;
+            border-right: 37px solid transparent;
+        }
+        .flow-path .arrow .data{
+            position: absolute;
+            line-height: 36px;
+            width:44px;
+            height: 36px;
+            color: #ffffff;
+            text-align: center;
+            font-size: 12px;
+        }
+        .flow-path .arrow.on .head{
+            background-color: #FFCFB7;
+        }
+        .flow-path .arrow.on .foot{
+            border-top:18px solid #FFCFB7;
+        }
+    </style>
+</head>
+
+<body style="width: 1080px">
+<div class="main_cont" style="background: none">
+    <div class="DmpFine-title" style="width: 1080px">
+        <div class="DmpFine-titleLeft DmpFine-textcolor3">
+            <a href="javaScript:;">客户数据中心</a>>
+            <a href="javaScript:;">任务推送</a>>
+            <a href="javaScript:;">外呼推送</a>
+        </div>
+        <div class="DmpFine-titleRight">
+            <button class="DmpFine-btn01 fl" style="margin-top:8px;margin-right: 20px">推送详情</button>
+            <button class="DmpFine-btn04 fl" style="margin-top:8px">返回</button>
+        </div>
+    </div>
+    <div class="DmpFine-mainBox">
+        <div class="DmpFine-box mb30 ">
+            <div class="DmpFine-box-title" style="padding: 0px;">
+                <div class="DmpFine-box-titleLeft">
+                    <div class="DmpFine-box-titleLeftText" style="font-size: 14px;border-left: 0px;padding-left: 0px">推送效果</div>
+                </div>
+            </div>
+            <div class="DmpFine-box-body clearfix" style="padding: 20px 12px ">
+                <div class="DmpFine-box-left">
+                    <div class="function-bar">
+                        <div class="data-name">
+                            <div class="order">1</div>总人数
+                        </div>
+                        <div class="data-numb">500人</div>
+                    </div>
+                    <div class="flow-path">
+                        <div class="arrow">
+                            <div class="head">
+                                <div class="data">80.00%</div>
+                            </div>
+                            <div class="foot"></div>
+                        </div>
+                        <div class="function-bar">
+                            <div class="data-name">
+                                <div class="order">2</div>推送成功数
+                            </div>
+                            <div class="data-numb">400人</div>
+                        </div>
+                    </div>
+                    <div class="flow-path">
+                        <div class="arrow on">
+                            <div class="head">
+                                <div class="data">80.00%</div>
+                            </div>
+                            <div class="foot"></div>
+                        </div>
+                        <div class="function-bar">
+                            <div class="data-name">
+                                <div class="order">3</div>外呼数
+                            </div>
+                            <div class="data-numb">390人</div>
+                        </div>
+                    </div>
+                    <div class="flow-path">
+                        <div class="arrow on">
+                            <div class="head">
+                                <div class="data">80.00%</div>
+                            </div>
+                            <div class="foot"></div>
+                        </div>
+                        <div class="function-bar">
+                            <div class="data-name">
+                                <div class="order">4</div>外呼接通
+                            </div>
+                            <div class="data-numb">100人</div>
+                        </div>
+                    </div>
+                    <div class="flow-path">
+                        <div class="arrow on">
+                            <div class="head">
+                                <div class="data">80.00%</div>
+                            </div>
+                            <div class="foot"></div>
+                        </div>
+                        <div class="function-bar">
+                            <div class="data-name">
+                                <div class="order">5</div>感兴趣
+                            </div>
+                            <div class="data-numb">90人</div>
+                        </div>
+                    </div>
+                    <div class="flow-path">
+                        <div class="arrow on">
+                            <div class="head">
+                                <div class="data">80.00%</div>
+                            </div>
+                            <div class="foot"></div>
+                        </div>
+                        <div class="function-bar">
+                            <div class="data-name">
+                                <div class="order">6</div>来访
+                            </div>
+                            <div class="data-numb">60人</div>
+                        </div>
+                    </div>
+                    <div class="flow-path">
+                        <div class="arrow on">
+                            <div class="head">
+                                <div class="data">80.00%</div>
+                            </div>
+                            <div class="foot"></div>
+                        </div>
+                        <div class="function-bar">
+                            <div class="data-name">
+                                <div class="order">7</div>认购
+                            </div>
+                            <div class="data-numb">10人</div>
+                        </div>
+                    </div>
+                    <div class="flow-path">
+                        <div class="arrow on">
+                            <div class="head">
+                                <div class="data">80.00%</div>
+                            </div>
+                            <div class="foot"></div>
+                        </div>
+                        <div class="function-bar">
+                            <div class="data-name">
+                                <div class="order">8</div>签约
+                            </div>
+                            <div class="data-numb">6人</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="DmpFine-box-right">
+                    <div class="eachartlist" id="eacharttab"></div>
+                    <div class="DmpFine-box-footer">
+                        <button class="DmpFine-btn01">推送详情</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../js/jquery-2.2.4.min.js"></script>
+<script src="../js/DmpFine.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script>
+    $(function () {
+        new SlidingLayer($("#DmpFine_select1"), $("#DmpFine_select2"));
+        $(".dmp-select-option p").click(function () {
+            $(this).parent().prev().prev().prev().val($(this).data("v"));
+            $(this).parent().prev().prev().html($(this).html());
+            $(this).parent().hide();
+        });
+    });
+    sexTable($('#eacharttab')[0]);
+    /*性别*/
+    function sexTable(obj) {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(obj);
+
+        var data = [["2000-06-05",116],["2000-06-06",129],["2000-06-07",135],["2000-06-08",86],["2000-06-09",73],["2000-06-10",85],["2000-06-11",73],["2000-06-12",68],["2000-06-13",92],["2000-06-14",130],["2000-06-15",245],["2000-06-16",139],["2000-06-17",115],["2000-06-18",111],["2000-06-19",309],["2000-06-20",206],["2000-06-21",137],["2000-06-22",128],["2000-06-23",85],["2000-06-24",94],["2000-06-25",71],["2000-06-26",106],["2000-06-27",84],["2000-06-28",93],["2000-06-29",85],["2000-06-30",73],["2000-07-01",83],["2000-07-02",125],["2000-07-03",107],["2000-07-04",82],["2000-07-05",44],["2000-07-06",72],["2000-07-07",106],["2000-07-08",107],["2000-07-09",66],["2000-07-10",91],["2000-07-11",92],["2000-07-12",113],["2000-07-13",107],["2000-07-14",131],["2000-07-15",111],["2000-07-16",64],["2000-07-17",69],["2000-07-18",88],["2000-07-19",77],["2000-07-20",83],["2000-07-21",111],["2000-07-22",57],["2000-07-23",55],["2000-07-24",60]];
+
+        var dateList = data.map(function (item) {
+            return item[0];
+        });
+        var valueList = data.map(function (item) {
+            return item[1];
+        });
+
+        option = {
+            // Make gradient line here
+            visualMap: [{
+                show: false,
+                type: 'continuous',
+                seriesIndex: 0,
+                min: 0,
+                max: 400
+            }],
+            tooltip: {
+                trigger: 'axis'
+            },
+            xAxis: [{
+                data: dateList
+            }],
+            yAxis: [{
+                splitLine: {show: false}
+            }],
+            grid: [{
+                top:'10%',
+                bottom: '20%'
+            }],
+            series: [{
+                name:'新增客户',
+                type: 'line',
+                showSymbol: false,
+                data: valueList
+            }]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+</script>
+
+</html>

@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>编辑</title>
+	<link rel="stylesheet" href="../../css/DMPbase.css"/>
+    <link rel="stylesheet" href="../../css/DmpFine.css"/>
+    <link rel="stylesheet" href="../../js/My97DatePicker/skin/WdatePicker.css"/>
+	<style>
+		.mt12{margin-top: 12px;}
+		.font-size14{font-size: 14px;}
+		.toggle-til li{line-height: 40px;height: 40px;text-align: center;color: #cccccc;cursor: pointer;font-size: 16px;font-weight: 600;position: relative;}
+		.toggle-til li:first-child:after{height: 30px;right: 0;top: 5px;position: absolute;border-right: 1px solid #dfdfdf;content: '';}
+		.toggle-til li.on{color: #ff5400;}
+		.toggle-tip{line-height: 40px;text-align: center;font-size: 16px;}
+		.relation-wrap{transition: right .3s}
+		.relation-wrap.on{right: 500px;}
+		.DmpFine-box-body {
+			position: relative;
+			border: 1px solid #dfdfdf;
+			border-top: 0;
+			background: #fff;
+		}
+		.DmpFine-box{
+			border: 0px;
+			/*background: url(../../images/bg_main_left.png) repeat-y #f5f5f5;*/
+		}
+		.main_cont {
+			width: 1080px;
+			/*background: url(../../images/bg_main_left.png) repeat-y #f5f5f5;*/
+			/* min-height: calc(100vh - 20px); */
+			padding-bottom: 20px;
+			min-height: 100%;
+		}
+		.list-table-body ul li{
+			width: 50%;
+		}
+		.toggleTable2-btn{
+			margin-bottom: 30px;
+		}
+		.toggleTable2-btn span{
+			background: #fff;
+			border: 0px;
+			border-bottom: 1px solid #dfdfdf;
+		}
+		.toggleTable2-btn span.on{
+			border: 1px solid #dfdfdf;
+			border-bottom: 0px;
+			border-top: 2px solid #FF5400;
+		}
+		.toggleTable2-btn{
+			border: 0px;
+			border-radius: 0px;
+		}
+		.kf-select{
+			overflow-x: hidden;
+			text-overflow: ellipsis;
+			white-space:nowrap;
+		}
+	</style>
+</head>
+<body>
+	<div class="main_cont">
+		<div class="DmpFine-title" style="width: 1080px">
+			<div class="DmpFine-titleLeft DmpFine-textcolor3">
+				<a href="javaScript:;">编辑客户资料</a>
+			</div>
+			<div class="DmpFine-titleRight">
+				<button class="DmpFine-btn04">返回</button>
+			</div>
+		</div>
+
+		<div class="DmpFine-mainBox">
+			<div class="toggleTab clearfix">
+				<!--资料卡模式-->
+
+				<!--toggleTable2-->
+				<div class="toggleTable2-wrap">
+					<div class="toggleTable2-btn fl">
+						<span>基本资料</span>
+
+
+					</div>
+					<div class="toggleTable2-btn fl" style="width:calc(100% - 80px);height: 42px;border-bottom: 1px solid #dfdfdf">
+					</div>
+					<div class="toggleTable2-con">
+						<div class="DmpFine-box clearfix">
+							<div class="toggleTable2-nav" style="border: 0px"></div>
+							<div class="DmpFine-box-body clearfix" style="border: 0;">
+								<div class="DmpFine-table">
+									<div class="list-table-body" >
+										<div class="kf-item">
+											<ul class="clearfix">
+												<li class="clearfix">
+													<span>ID</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span><i>*</i>客户姓名</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span><i>*</i>移动电话1</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>来源活动</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>个人客户</p>
+															<p>企业客户</p>
+															<p>商家客户</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>移动电话2</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>移动电话3</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>移动电话4</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>客户类型</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>个人客户</p>
+															<p>企业客户</p>
+															<p>商家客户</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>客户状态</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>个人客户</p>
+															<p>企业客户</p>
+															<p>商家客户</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>失效原因</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>个人客户</p>
+															<p>企业客户</p>
+															<p>商家客户</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>办公电话</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>住宅电话</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>电子邮箱</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>证件类型</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>个人客户</p>
+															<p>企业客户</p>
+															<p>商家客户</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>证件编码</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>邮政编码</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>通讯地址</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>性别</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>男</p>
+															<p>女</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>籍贯</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>户籍</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>工资单位</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>国家/地区</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>男</p>
+															<p>女</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>省份/周</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>男</p>
+															<p>女</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>城市</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>男</p>
+															<p>女</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>区</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>男</p>
+															<p>女</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>路</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>地址号码</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>国籍</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>男</p>
+															<p>女</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>工作区域</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>居住区域</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>婚姻状况</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>已婚</p>
+															<p>未婚</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>配偶姓名</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>教育程度</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>小学</p>
+															<p>中专</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>收入层次</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>小学</p>
+															<p>中专</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>家庭结构</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>小学</p>
+															<p>中专</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>职业</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>小学</p>
+															<p>中专</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>兴趣爱好</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>年龄段</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>小学</p>
+															<p>中专</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>有无保姆同住</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>小学</p>
+															<p>中专</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>是否主要决策者</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>小学</p>
+															<p>中专</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span><i>*</i>联系方式</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>是否业主</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>是</p>
+															<p>否</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>项目</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>是</p>
+															<p>否</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>楼栋</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>是</p>
+															<p>否</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>单元</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>楼层</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>房间</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>同意接触渠道</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>是</p>
+															<p>否</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>认知途径</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>是</p>
+															<p>否</p>
+														</div>
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>Mac地址</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>IMEI</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>微信ID</span>
+													<div class="kf-text">
+														<input type="text">
+													</div>
+												</li>
+												<li class="clearfix">
+													<span>是否志愿者</span>
+													<div class="kf-text">
+														<div class="kf-font"></div>
+														<div class="kf-select" style="display: none;">
+															<p>是</p>
+															<p>否</p>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--toggleTable2-->
+
+			</div>
+
+		</div>
+	</div>
+
+	
+	<script src="../../js/My97DatePicker/WdatePicker.js"></script>
+	<script src="../../js/jquery-2.2.4.min.js"></script>
+	<script src="../../js/DmpFine.js"></script>
+	<script src="../../js/wordcloud2.js"></script>
+	<script src="../../js/echarts.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			toggleTab();
+
+			
+
+			
+			//tab切换
+			$(".toggleTable2-btn span").click(function(){
+				var _index = $(this).index();
+				$(this).addClass("on").siblings().removeClass("on");
+				$(".toggleTable2-con .DmpFine-box").hide().eq(_index).show();
+			}).eq(0).trigger("click");})
+			
+
+
+	</script>
+	<script type="text/javascript">
+        //下拉js
+        $(function(){
+            $(".kf-font").click(function(e){
+                e.stopPropagation();	//阻止冒泡
+                var _this = $(this);
+                var selObj = _this.next(".kf-select");
+                $(".kf-select").hide();
+                selObj.show();
+                _this.parents("li").addClass("zIndex");
+                $(document).click(function(){
+                    selObj.hide();
+                    _this.parents("li").removeClass("zIndex");
+                });
+                if($(this).parents('.kf-text').find('.DmpFine-searchInput01 input').length>0){
+                    $(this).parents('.kf-text').find('.DmpFine-searchInput01 input').val('');
+                }
+            });
+            $(".kf-select p").click(function(){
+                var _text = $(this).text();
+                var thisParent = $(this).parent();
+                thisParent.parents('.kf-text').find(".kf-font").text(_text);
+                $(this).parents('.kf-select').hide();
+            });
+            $(".DmpFine-searchInput01 input").click(function(e){
+                e.stopPropagation();
+                var _this = this;
+                $(this).on('input',function(){
+                    $(this).parents('.kf-select').find('p').hide();
+                    $(this).parents('.kf-select').find('p').each(function(){
+                        if(flagMath($(_this).val(),$(this).text())){
+                            $(this).show();
+                        }else{
+                            $(this).hide();
+                        }
+                    })
+                })
+            });
+            /*下面3个是下拉多选框*/
+            $('.kf-select').on('click','div',function(e){
+                e.stopPropagation();
+            })
+            $('.kf-select').on('click','.dmp-select-footer .DmpFine-btn01',function(){
+                var _this = this;
+                if($(this).parents('.kf-select').find('.allselect').hasClass('selected')){
+                    $(this).parents('.kf-text').find('.kf-font').text('全部');
+                }else{
+                    var text='';
+                    $(this).parents('.kf-select').find('.dmp-select-sonbox .selected').each(function(){
+                        text += $(this).next().text()+',';
+                    })
+                    if(!text.trim()){
+                        $(this).parents('.kf-text').find('.kf-font').text('全部');
+                    }else{
+                        var text1 = text.substring(0,text.length - 1);
+                        $(this).parents('.kf-text').find('.kf-font').text(text1);
+                    }
+                }
+                _this.timer = setTimeout(function () {
+                    $(_this).parents('.kf-select').hide();
+                }, 300);
+            })
+            $('.kf-select').on('click','.dmp-select-footer .DmpFine-btn02',function(){
+                $(this).parents('.kf-select').find('.selectcheckbox').removeClass('selected');
+            })
+            $('.kf-select').on('click','.selectcheckbox',function(e){
+                e.stopPropagation();
+                if($(this).hasClass('allselect')){     //判断自身是否全选
+                    if($(this).hasClass('selected')){  //判断自身是否选中
+                        $(this).removeClass('selected').parent().next().find('.selectcheckbox').removeClass('selected');
+                    }else{
+                        $(this).addClass('selected').parent().next().find('.selectcheckbox').addClass('selected');
+                    }
+                }else{
+                    var sonbox = $(this).parents('.dmp-select-sonbox');
+                    if($(this).hasClass('selected')){
+                        $(this).removeClass('selected');
+                        sonbox.prev().find('.allselect').removeClass('selected');
+                    }else{
+                        $(this).addClass('selected');
+                        if(sonbox.find('.selectcheckbox').length === sonbox.find('.selected').length){
+                            sonbox.prev().find('.allselect').addClass('selected');
+                        }
+                    }
+                }
+            })
+        });
+
+	</script>
+</body>
+</html>

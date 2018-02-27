@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/DMPbase.css"/>
+    <link rel="stylesheet" href="../../css/DmpFine.css"/>
+    <style>
+        .DmpFine-box-title{
+            background:rgba(245,245,245,1);
+            border-radius: 5px 5px 0 0;
+            border-bottom: 0px;
+        }
+        .mb30{
+            margin-bottom: 30px;
+        }
+        .DmpFine-mainBox{
+            padding-top: 75px;
+        }
+        .main_cont {
+            width: 1080px;
+            /* min-height: calc(100vh - 20px); */
+            padding-bottom: 20px;
+        }
+        .content{
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .DmpFine-table>table>thead tr td{
+            font-size: 12px;
+            color: #666;
+            font-weight: normal;
+        }
+        .DmpFine-table>table>tbody tr td{
+            font-size: 12px;
+        }
+        .main_cont ::-webkit-scrollbar-track
+        {
+            /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+            border-radius: 0px;
+            background-color: #F5F5F5;
+            box-sizing: border-box;
+        }
+
+        .main_cont ::-webkit-scrollbar
+        {
+            height: 6px;
+            background-color: #F5F5F5;
+            box-sizing: border-box;
+        }
+
+        .main_cont ::-webkit-scrollbar-thumb
+        {
+            border-radius: 4px;
+            /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+<div class="main_cont">
+    <div class="DmpFine-title">
+        <div class="DmpFine-titleLeft DmpFine-textcolor3">
+            <a href="javaScript:;">客户数据中心</a>>
+            <a href="javaScript:;">客户洞察</a>>
+            <a href="javaScript:;">客群管理</a>>
+            <a href="javaScript:;">详细</a>>
+            <a href="javaScript:;">客群人数</a>
+        </div>
+        <div class="DmpFine-titleRight">
+            <button class="DmpFine-btn01 fl" style="margin-top:8px;margin-right: 20px">导出表格</button>
+            <button class="DmpFine-btn04 fl" style="margin-top:8px">返回</button>
+        </div>
+    </div>
+    <div class="DmpFine-mainBox">
+        <div class="toggle-body clearfix">
+            <div class="content">聚房宝来电客群2018年2月10日创建，目前最新客群人数为168人，近1个月客群人数变化情况如下图</div>
+            <div class="DmpFine-box mb30">
+                <div class="DmpFine-box-body clearfix" style="padding-top: 30px">
+                    <div class="eachartzone clearfix">
+                        <div class="eacharttab" id="eacharttab">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="DmpFine-box clearfix">
+                <div class="DmpFine-box-body clearfix">
+                    <div class="DmpFine-table">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td>电话号码</td>
+                                <td>客户姓名</td>
+                                <td>客户状态</td>
+                                <td>客户属性</td>
+                                <td>客户等级</td>
+                                <td>性别</td>
+                                <td>年龄段</td>
+                                <td>居住区域</td>
+                                <td>工作区域</td>
+                                <td>交通方式</td>
+                                <td>家庭结构</td>
+                                <td>客户来源</td>
+                                <td>信息来源</td>
+                                <td>认知途径</td>
+                                <td>客户职业</td>
+                                <td>客户登记日期</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>13500000001</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="16"  style="border: 0px">
+                                    <div class="DmpFine-goPage clearfix">
+                                        <div class="goPage clearfix">
+                                            <a href="javascript:void(0);" class="goPage-box noPrveAndNext">|&lt;</a>
+                                            <a href="javascript:void(0);" class="goPage-box noPrveAndNext">上一页</a>
+                                            <div class="pageNum"><a href="javaScript:void(0);" class="goPage-box selected" no_data="0">1</a>&nbsp;<a href="javaScript:void(0);"
+                                                                                                                                                     class="goPage-box" no_data="0">2</a>&nbsp;<a href="javaScript:void(0);" class="goPage-box" no_data="0">3</a></div>
+                                            <a href="javascript:void(0);" class="goPage-box" id="nextPage" page="2">下一页</a>
+                                            <a href="javascript:void(0);" class="goPage-box" id="lastPage" page="3">&gt;|</a>
+                                            <input class="goPage-input" type="text" name="cpage" onkeyup="this.value=this.value.replace(/\D/g,'')">
+                                            <a class="goPage-box" href="javascript:void(0);" id="goPage">跳转</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../../js/jquery-2.2.4.min.js"></script>
+<script src="../../js/DmpFine.js"></script>
+<script src="../../js/echarts.min.js"></script>
+<script src="index.js"></script>
+<script>
+
+
+        sexTable($('#eacharttab')[0]);
+        /*性别*/
+        function sexTable(obj) {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(obj);
+
+            var data = [["2000-06-05",116],["2000-06-06",129],["2000-06-07",135],["2000-06-08",86],["2000-06-09",73],["2000-06-10",85],["2000-06-11",73],["2000-06-12",68],["2000-06-13",92],["2000-06-14",130],["2000-06-15",245],["2000-06-16",139],["2000-06-17",115],["2000-06-18",111],["2000-06-19",309],["2000-06-20",206],["2000-06-21",137],["2000-06-22",128],["2000-06-23",85],["2000-06-24",94],["2000-06-25",71],["2000-06-26",106],["2000-06-27",84],["2000-06-28",93],["2000-06-29",85],["2000-06-30",73],["2000-07-01",83],["2000-07-02",125],["2000-07-03",107],["2000-07-04",82],["2000-07-05",44],["2000-07-06",72],["2000-07-07",106],["2000-07-08",107],["2000-07-09",66],["2000-07-10",91],["2000-07-11",92],["2000-07-12",113],["2000-07-13",107],["2000-07-14",131],["2000-07-15",111],["2000-07-16",64],["2000-07-17",69],["2000-07-18",88],["2000-07-19",77],["2000-07-20",83],["2000-07-21",111],["2000-07-22",57],["2000-07-23",55],["2000-07-24",60]];
+
+            var dateList = data.map(function (item) {
+                return item[0];
+            });
+            var valueList = data.map(function (item) {
+                return item[1];
+            });
+
+            option = {
+
+                // Make gradient line here
+                visualMap: [{
+                    show: false,
+                    type: 'continuous',
+                    seriesIndex: 0,
+                    min: 0,
+                    max: 400
+                }],
+                tooltip: {
+                    trigger: 'axis'
+                },
+                xAxis: [{
+                    data: dateList
+                }],
+                yAxis: [{
+                    splitLine: {show: false}
+                }],
+                grid: [{
+                    top:'10%',
+                    bottom: '20%'
+                }],
+                series: [{
+                    name:'新增客户',
+                    type: 'line',
+                    showSymbol: false,
+                    data: valueList
+                }]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+
+        }
+
+
+</script>
+</html>

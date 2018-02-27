@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="../../css/DMPbase.css" />
+  <link rel="stylesheet" href="../../css/DmpFine.css" />
+  <style>
+    .main_cont {
+      width: 1080px;
+      padding-bottom: 20px;
+      min-height: 100%;
+    }
+    .labelbox{
+      width: 100%;
+      height: 370px;
+      border: 1px solid #dfdfdf;
+      margin-bottom: 30px;
+    }
+    .labelbox-left{
+      width: 300px;
+      float: left;
+      height: 100%;
+      border-right:1px solid #dfdfdf;
+    }
+    .DmpFine-box-titleRight{
+      padding: 15px 0px;
+    }
+    .DmpFine-box-title{
+      background:rgba(245,245,245,1);
+    }
+    .control-pen{;float: left;width: 16px;height: 16px;background: url(./pen.png) center no-repeat;cursor: pointer;}
+    .control-delete{float: left;width: 16px;height: 16px;background: url(./delete.png) center no-repeat;cursor: pointer;}
+    .control-close{float: left;width: 16px;height: 16px;background: url(./close.png) center no-repeat;cursor: pointer;}
+    .control-add{display: inline-block;margin: 0 auto;margin-top: 9px;width: 14px;height: 14px;background: url(./add.png) center no-repeat;cursor: pointer;}
+    .kqlabel.add{border-color:#FF5400;color: #FF5400}
+    .kqlabel.on{border-color:#FF5400;color: #FF5400;background-color:rgba(253,243,238,1);  }
+    .content{padding: 20px 15px;height: 322px;overflow-y: auto}
+    .labelbox-right{width: 728px;float: right;height: 368px;overflow-y: auto;}
+    .kqlabel{position: relative;cursor: pointer;margin-bottom: 16px;text-align: center;font-size: 14px;width:calc((100%  - 28px)/2);float: left;margin-right: 28px;box-sizing: border-box;border: 1px solid #dfdfdf;height: 100px;line-height: 100px}
+    .kqlabel:nth-child(2n){margin-right: 0px}
+    .kqlabel .left{width: 100px;height: 100px;float: left}
+    .kqlabel .right{padding: 15px;padding-left: 0px;float: left;width: calc(100% - 100px);height: 100px;text-align: left}
+    .kqlabel .right .head{height: 30px;line-height: 30px;font-size: 16px;color: #333333;font-weight: bolder}
+    .kqlabel .right .body{height: 20px;line-height: 20px;font-size: 14px;color: #666666}
+    .kqlabel .right .foot{height: 20px;line-height: 20px;font-size: 14px;color: #4A90E2}
+    .kqlabel .top-right.wwh{position: absolute;top:-1px;right: -1px;width: 60px;height: 20px;line-height: 20px;text-align: center;font-size: 10px;color: #936C2A;background-color: #FADBA3}
+    .kqlabel .top-right.whz{position: absolute;top:-1px;right: -1px;width: 60px;height: 20px;line-height: 20px;text-align: center;font-size: 10px;color: #51782E;background-color: #C4E5A7}
+    .kqlabel .top-right.whjs{position: absolute;top:-1px;right: -1px;width: 60px;height: 20px;line-height: 20px;text-align: center;font-size: 10px;color: #8F3628;background-color: #F4ADA2}
+    .emt{height: 200px;padding-top: 40px}
+    .emt-words{height: 20px;line-height: 20px;color: #999;text-align: center}
+    .label-wrap{padding: 20px 37px}
+    .table-wrap{display: none}
+    .DmpFine-box-titleLeft .control-pen,.DmpFine-box-titleLeft .control-delete{margin-top: 15px;margin-left: 15px}
+    .DmpFine-box-titleLeft .control-delete{margin-left: 10px}
+    table tr td{border-bottom: 0px;color: #333333;line-height: 34px;height: 34px}
+    .DmpFine-table{height: 322px;overflow-y: auto;}
+    .DmpFine-table>table>thead tr td{color:#999;font-size: 14px;font-weight: normal}
+    .ctrl .control-pen,.ctrl .control-delete{float: none;display: inline-block}
+    .labelroom{margin: 0 auto;width: 150px;height: 24px;line-height: 22px;box-sizing: border-box;border: 1px solid #dfdfdf;background-color: rgba(242,242,242,1);}
+    .labelroom.add{background-color: #fff}
+    .DmpFine-table{padding: 15px 0}
+    .DmpFine-table .left{width: 538px;float: left}
+    .DmpFine-table .right{width: calc(100% - 538px);float: left;}
+    .DmpFine-table .right img{display: block;margin: 0 auto}
+    .DmpFine-table .right .img-name{line-height: 40px;font-size: 14px;text-align: center;font-weight: bolder}
+    .DmpFine-table .form{width: 100%}
+    .DmpFine-table .form .text{width: 420px;line-height: 35px;font-size: 14px;color: #666666;float: left;margin-left: 10px}
+    .DmpFine-table .form .title{font-weight: bolder;color: #333333;float: left;line-height: 35px;width: 100px;text-align: right}
+    .DmpFine-table .form a{color: #4A90E2;text-decoration: underline;margin-left: 10px}
+    .DmpFine-table .form .table{width: 33.3%;float: left;color: #333333;font-weight: bolder}
+    .DmpFine-table .form .table span{color: #FF5400;font-weight: bolder}
+    .nav ::-webkit-scrollbar-track
+    {
+      /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+      border-radius: 0px;
+      background-color: #F5F5F5;
+      box-sizing: border-box;
+    }
+
+    .nav ::-webkit-scrollbar
+    {
+      width: 6px;
+      background-color: #F5F5F5;
+      box-sizing: border-box;
+    }
+
+    .nav ::-webkit-scrollbar-thumb
+    {
+      border-radius: 4px;
+      /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+      background-color: #999;
+    }
+    .kq-img img{
+      display: block;
+      margin: 30px auto;
+
+    }
+  </style>
+</head>
+
+<body style="width: 1080px">
+  <div class="main_cont">
+    <div class="DmpFine-title" style="width: 1080px">
+      <div class="DmpFine-titleLeft DmpFine-textcolor3">
+        <a href="javaScript:;">客户数据中心</a>>
+        <a href="javaScript:;">客户管理</a>>
+        <a href="javaScript:;">标签管理</a>
+      </div>
+      <div class="DmpFine-titleRight">
+        <button class="DmpFine-btn01 fl" style="margin-top:8px;margin-right: 20px">新增</button>
+        <div class="DmpFine-searchInput01 clearfix fl" style="margin-top: 7.5px;width: 220px;">
+          <input type="text" placeholder="请输入二级类别或标签名称">
+          <span class="search-icon"></span>
+        </div>
+      </div>
+    </div>
+    <div class="DmpFine-mainBox">
+      <div class="nav">
+        <div class="labelbox">
+          <div class="labelbox-left">
+            <div class="DmpFine-box-title">
+              <div class="DmpFine-box-titleLeft">
+                <strong>潜在客群集</strong>
+              </div>
+              <div class="DmpFine-box-titleRight">
+                <i class="control-pen"></i>
+                <i class="control-delete"></i>
+              </div>
+            </div>
+            <div class="content">
+              <div class="kq-img"><img src="kqj-default.png" alt="" width="120"></div>
+              <div><span>潜在客户，客户有过来电来访等行为，但目前未成交</span></div>
+            </div>
+          </div>
+          <div class="labelbox-right">
+            <div class="label-wrap clearfix">
+              <div class="kqlabel add"><span style="font-size: 20px;font-weight: bolder;margin-right: 5px">+</span><span>新增客群</span></div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right wwh">未外呼</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whz">外呼中</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+
+            </div>
+            <div class="table-wrap">
+              <div class="DmpFine-box-title">
+                <div class="DmpFine-box-titleLeft">
+                  <strong class="fl">xx客群</strong>
+                  <i class="control-pen"></i>
+                  <i class="control-delete"></i>
+                </div>
+                <div class="DmpFine-box-titleRight">
+                  <i class="control-close"></i>
+                </div>
+              </div>
+              <div class="DmpFine-table clearfix">
+                <div class="left">
+                  <div class="form clearfix">
+                    <div class="title">客群人数</div>
+                    <div class="text"><span>168人</span><a href="">详情</a><a href="">刷新</a></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">创建时间</div>
+                    <div class="text"><span>2018-01-31</span></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">客群描述</div>
+                    <div class="text"><span>客户数据详细，没有多余的xxxxxxxxxxxxxxxxxx 太长可以换行客户数据详细，没有多余的xxxxxxxxxxxxxxxxxx 太长可以换行</span></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">客群特征</div>
+                    <div class="text"><div>基本信息-性别：男</div><div>基本信息-客户属性：新客户 </div> <div>行为信息-来访：时间≥2018-01-01 00:00:00 时间≤2018-01-10 00:00:00 </div><div>项目：保利春天里</div></span></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">客群应用</div>
+                    <div class="text">
+                      <div><a href="">5个外呼推送</a></div>
+                      <div>
+                          <div class="table">外呼接通率 <span>33.33%</span></div>
+                          <div class="table">到访率 <span>13.73%</span></div>
+                          <div class="table">签约率 <span>0.55%</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title" style="height: 35px"></div>
+                    <div class="text"><button class="DmpFine-btn01 fl" style="margin-top:8px;margin-right: 20px">新增外呼推送任务</button></div>
+                  </div>
+                </div>
+                <div class="right">
+                  <img src="kfhx.png" alt="" width="140">
+                  <div class="img-name">客户画像</div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+        <div class="labelbox">
+          <div class="labelbox-left">
+            <div class="DmpFine-box-title">
+              <div class="DmpFine-box-titleLeft">
+                <strong>交易客群集</strong>
+              </div>
+              <div class="DmpFine-box-titleRight">
+                <i class="control-pen"></i>
+                <i class="control-delete"></i>
+              </div>
+            </div>
+            <div class="content">
+              <div class="kq-img"><img src="kqj-default.png" alt="" width="120"></div>
+              <div><span>潜在客户，客户有过来电来访等行为，但目前未成交</span></div>
+            </div>
+          </div>
+          <div class="labelbox-right">
+            <div class="label-wrap clearfix">
+              <div class="kqlabel add"><span style="font-size: 20px;font-weight: bolder;margin-right: 5px">+</span><span>新增客群</span></div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right wwh">未外呼</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whz">外呼中</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+
+            </div>
+            <div class="table-wrap">
+              <div class="DmpFine-box-title">
+                <div class="DmpFine-box-titleLeft">
+                  <strong class="fl">xx客群</strong>
+                  <i class="control-pen"></i>
+                  <i class="control-delete"></i>
+                </div>
+                <div class="DmpFine-box-titleRight">
+                  <i class="control-close"></i>
+                </div>
+              </div>
+              <div class="DmpFine-table clearfix">
+                <div class="left">
+                  <div class="form clearfix">
+                    <div class="title">客群人数</div>
+                    <div class="text"><span>168人</span><a href="">详情</a><a href="">刷新</a></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">创建时间</div>
+                    <div class="text"><span>2018-01-31</span></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">客群描述</div>
+                    <div class="text"><span>客户数据详细，没有多余的xxxxxxxxxxxxxxxxxx 太长可以换行客户数据详细，没有多余的xxxxxxxxxxxxxxxxxx 太长可以换行</span></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">客群特征</div>
+                    <div class="text"><div>基本信息-性别：男</div><div>基本信息-客户属性：新客户 </div> <div>行为信息-来访：时间≥2018-01-01 00:00:00 时间≤2018-01-10 00:00:00 </div><div>项目：保利春天里</div></span></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">客群应用</div>
+                    <div class="text">
+                      <div><a href="">5个外呼推送</a></div>
+                      <div>
+                        <div class="table">外呼接通率 <span>33.33%</span></div>
+                        <div class="table">到访率 <span>13.73%</span></div>
+                        <div class="table">签约率 <span>0.55%</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title" style="height: 35px"></div>
+                    <div class="text"><button class="DmpFine-btn01 fl" style="margin-top:8px;margin-right: 20px">新增外呼推送任务</button></div>
+                  </div>
+                </div>
+                <div class="right">
+                  <img src="kfhx.png" alt="" width="140">
+                  <div class="img-name">客户画像</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="labelbox">
+          <div class="labelbox-left">
+            <div class="DmpFine-box-title">
+              <div class="DmpFine-box-titleLeft">
+                <strong>行为信息</strong>
+              </div>
+              <div class="DmpFine-box-titleRight">
+                <i class="control-pen"></i>
+                <i class="control-delete"></i>
+              </div>
+            </div>
+            <div class="content">
+              <div class="kq-img"><img src="kqj-default.png" alt="" width="120"></div>
+              <div><span>潜在客户，客户有过来电来访等行为，但目前未成交</span></div>
+            </div>
+          </div>
+          <div class="labelbox-right">
+            <div class="label-wrap clearfix">
+              <div class="kqlabel add"><span style="font-size: 20px;font-weight: bolder;margin-right: 5px">+</span><span>新增客群</span></div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right wwh">未外呼</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whz">外呼中</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+              <div class="kqlabel">
+                <div class="left">
+                  <img src="khq-head-img.png" alt="" width="70">
+                </div>
+                <div class="right">
+                  <div class="head">标题最长不可超十个字</div>
+                  <div class="body">外呼接通率：<span>33%</span></div>
+                  <div class="foot">160人</div>
+                </div>
+                <div class="top-right whjs">外呼结束</div>
+              </div>
+
+            </div>
+            <div class="table-wrap">
+              <div class="DmpFine-box-title">
+                <div class="DmpFine-box-titleLeft">
+                  <strong class="fl">xx客群</strong>
+                  <i class="control-pen"></i>
+                  <i class="control-delete"></i>
+                </div>
+                <div class="DmpFine-box-titleRight">
+                  <i class="control-close"></i>
+                </div>
+              </div>
+              <div class="DmpFine-table clearfix">
+                <div class="left">
+                  <div class="form clearfix">
+                    <div class="title">客群人数</div>
+                    <div class="text"><span>168人</span><a href="">详情</a><a href="">刷新</a></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">创建时间</div>
+                    <div class="text"><span>2018-01-31</span></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">客群描述</div>
+                    <div class="text"><span>客户数据详细，没有多余的xxxxxxxxxxxxxxxxxx 太长可以换行客户数据详细，没有多余的xxxxxxxxxxxxxxxxxx 太长可以换行</span></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">客群特征</div>
+                    <div class="text"><div>基本信息-性别：男</div><div>基本信息-客户属性：新客户 </div> <div>行为信息-来访：时间≥2018-01-01 00:00:00 时间≤2018-01-10 00:00:00 </div><div>项目：保利春天里</div></span></div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title">客群应用</div>
+                    <div class="text">
+                      <div><a href="">5个外呼推送</a></div>
+                      <div>
+                        <div class="table">外呼接通率 <span>33.33%</span></div>
+                        <div class="table">到访率 <span>13.73%</span></div>
+                        <div class="table">签约率 <span>0.55%</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form clearfix">
+                    <div class="title" style="height: 35px"></div>
+                    <div class="text"><button class="DmpFine-btn01 fl" style="margin-top:8px;margin-right: 20px">新增外呼推送任务</button></div>
+                  </div>
+                </div>
+                <div class="right">
+                  <img src="kfhx.png" alt="" width="140">
+                  <div class="img-name">客户画像</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="labelbox">
+          <div class="labelbox-left">
+            <div class="DmpFine-box-title">
+              <div class="DmpFine-box-titleLeft">
+                <strong>xxxx</strong>
+              </div>
+              <div class="DmpFine-box-titleRight">
+                <i class="control-pen"></i>
+                <i class="control-delete"></i>
+              </div>
+            </div>
+            <div class="content">
+              <div class="kq-img"><img src="kqj-default.png" alt="" width="120"></div>
+              <div><span>潜在客户，客户有过来电来访等行为，但目前未成交</span></div>
+            </div>
+          </div>
+          <div class="labelbox-right" style="overflow: hidden">
+            <div class="label-wrap" style="text-align: center;">
+              <div class="emt"><img src="empty.png" alt="" width="140" style="display: block;margin: 0 auto"></div>
+              <div class="emt-words">这里还没有标签噢，赶快点击下面的按钮新建标签吧~</div>
+              <button class="DmpFine-btn01" style="margin-top: 20px">新增二级标签分类</button>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../../js/jquery-2.2.4.min.js"></script>
+<script src="../../js/DmpFine.js"></script>
+<script>
+  $(".label-wrap").on('click','.kqlabel',function () {
+      if($(this).hasClass('add')){
+          //.....弹窗
+      }else{
+          $(this).siblings().removeClass("on");
+          $(this).addClass('on');
+          $(this).parent().hide();
+          $(this).parent().next().show();
+      }
+  })
+  $(".table-wrap").on('click','.control-close',function () {
+      $(this).parents('.table-wrap').hide().prev().show();
+  })
+</script>
+
+</html>

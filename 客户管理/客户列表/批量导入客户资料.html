@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新增</title>
+    <link rel="stylesheet" href="../../css/DMPbase.css"/>
+    <link rel="stylesheet" href="../../css/DmpFine.css"/>
+    <style>
+        .DmpFine-box-row-left span{color: red}
+        #uploadMsg{color: #00b0d8}
+    </style>
+</head>
+<body>
+<div class="DmpFine-box clearfix" id="bqgl-xzbq">
+    <div class="DmpFine-box-title" style="background: #ffffff">
+        <div class="DmpFine-box-titleLeft">
+            <div class="DmpFine-box-titleLeftText">批量导入客户资料</div>
+        </div>
+        <div class="DmpFine-box-titleRight">
+            <button class="DmpFine-btn04 fl" style="margin-top:8px">返回</button>
+        </div>
+    </div>
+
+    <div class="DmpFine-box" style="border-top: 0px">
+        <div class="DmpFine-box-body">
+            <div class="sh-box pl20">
+
+                <div class="DmpFine-box-row mt20 clearfix" style="height: auto;color: #666">
+                    <div class="DmpFine-box-row-left" style="height: 100%">操作步骤：</div>
+                    <div class="DmpFine-box-row-right">
+                        <ul>
+                            <li>1、下载《导入模板》</li>
+                            <li>2、按模板格式整理好需要导入的客户资料</li>
+                            <li>3、点击“选择”按钮，选择excel文档</li>
+                            <li>4、点击“开始导入”，如果导入的数据量大或网络慢，请耐心等候，且不要关闭当前窗口</li>
+                            <a href="" style="color: #108EE9">下载模板</a>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="DmpFine-box-row mt20 clearfix " id="showUpload" >
+                    <div class="DmpFine-box-row-left">
+                        <span class="DmpFine-textcolor5">*</span>
+                        上传文件:
+                    </div>
+                    <div class="DmpFine-box-row-right">
+                        <button class="DmpFine-btn100" type="button" id="uploadBtn">选择文件</button>
+                        <input type="file" name="file" id="file0" onchange="ajaxFileUpload()" style="display: none;">
+                        <input type="hidden" name="fileUrl">
+                    </div>
+                    <div class="DmpFine-box-row-right">
+                        <p id="uploadMsg"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="DmpFine-box-footer">
+        <button class="DmpFine-btn01">开始上传</button>
+        <button class="DmpFine-btn02">取消</button>
+    </div>
+</div>
+</body>
+<script src="../../js/jquery-2.2.4.min.js"></script>
+<script src="../../js/DmpFine.js"></script>
+<script>
+    $('.DmpFine-box-row-right').on('click','#uploadBtn',function(){
+        $(this).next().click();
+
+    })
+    function ajaxFileUpload() {
+      console.log($('#file0').val());
+      var name = $('#file0').val();
+      $('#uploadMsg').text(name);
+    }
+
+</script>
+</html>

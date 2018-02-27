@@ -1,0 +1,88 @@
+/**********************
+ *CSS Animations by:
+ *http://codepen.io/vivinantony
+***********************/
+
+.fakeloader{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.spinner6 {
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -30px;
+}
+
+.spinner6 > div {
+  background-color: #fff;
+  height: 100%;
+  width: 6px;
+  margin-left:2px;
+  display: inline-block;
+  
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner6 .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner6 .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner6 .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner6 .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+
+    @-webkit-keyframes stretchdelay {
+      0%, 40%, 100% { -webkit-transform: translateY(-10px) }
+      20% { -webkit-transform: translateY(-20px) }
+    }
+
+    @keyframes stretchdelay {
+      0%, 40%, 100% {
+        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+      } 20% {
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+      }
+    }

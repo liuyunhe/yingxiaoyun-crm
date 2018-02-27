@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/DMPbase.css"/>
+    <link rel="stylesheet" href="./css/DmpFine.css"/>
+    <link rel="stylesheet" href="./js/My97DatePicker/skin/WdatePicker.css"/>
+    <style>
+        .DmpFine-box-title{
+            background:rgba(245,245,245,1);
+            border-radius: 5px 5px 0 0;
+            border-bottom: 0px;
+        }
+        .mb30{
+            margin-bottom: 30px;
+        }
+        .DmpFine-mainBox{
+            padding-top: 75px;
+        }
+        .main_cont {
+            width: 1080px;
+            /* min-height: calc(100vh - 20px); */
+            padding-bottom: 20px;
+        }
+        #float-data{
+            height: 120px;
+            padding-top: 20px;
+            width: 300px;
+            margin: 0 auto;
+            border-bottom: 1px solid #dddddd;
+        }
+        .data-bar{
+            height: 65px;
+            line-height: 65px;
+            text-align: center;
+            color: #FF5400;
+            font-size: 48px;
+        }
+        .data-nane{
+            line-height: 20px;
+            color: #999999;
+            font-size: 14px;
+            text-align: center;
+        }
+        .onethird{
+            width: 33.3%;
+            float: left;
+            height: 420px;
+            padding: 20px;
+        }
+        .tabbolck{
+            height: 50px;
+            padding-left: 170px;
+            margin-bottom: 20px;
+        }
+        .block{
+            width: 200px;
+            height: 50px;
+            box-sizing: border-box;
+            border: 1px solid #dddddd;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .block.on{
+            background:rgba(253,243,238,1);
+            border: 1px solid #FF5400;
+            color: #FF5400;
+        }
+        .tabmenu{
+            width: 170px;
+            float: left;
+            padding:0 20px;
+        }
+        .menubar{
+            width: 130px;
+            height: 50px;
+            border: 1px solid #dddddd;
+            border-bottom: 0px;
+            border-top: 0px;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+            padding: 0 15px;
+        }
+        .menubar:first-child{
+            border-top: 1px solid #dddddd;
+        }
+        .menubar:last-child{
+            border-bottom: 1px solid #dddddd;
+        }
+        .menubar.on{
+            background:#FF5400;
+            color: #fff;
+            border: 0px;
+        }
+        .menubar .dec{
+            border-bottom: 1px solid #dddddd;
+            /*box-sizing: border-box;*/
+        }
+        .menubar.on .dec{
+            border-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+<div class="main_cont">
+    <div class="DmpFine-title">
+        <div class="DmpFine-titleLeft DmpFine-textcolor3">
+            <a href="javaScript:;">首页-数据总览</a>
+        </div>
+        <div class="DmpFine-titleRight">
+        </div>
+    </div>
+    <div class="DmpFine-mainBox">
+        <div class="toggle-body clearfix">
+            <div class="DmpFine-box mb30 ">
+                <div class="DmpFine-box-title" style="padding: 0px">
+                    <div class="DmpFine-box-titleLeft">
+                        <div class="DmpFine-box-titleLeftText" style="font-size: 14px;border-left: 0px;padding-left: 0px">客户总览</div>
+                    </div>
+                    <div class="DmpFine-box-titleRight" style="margin-right: 20px;font-size: 14px;color: #666">数据更新时间：2017-12-3 12:00:00</div>
+                </div>
+                <div class="DmpFine-box-body clearfix">
+                    <!--客户总数-->
+                    <div class="float-data" id="float-data">
+                        <div class="data-bar counter">
+                            <span class="timer count-title" id="count-number"data-from="300" data-to="1000" data-speed="1500"></span>
+                        </div>
+                        <div class="data-nane">客户总数</div>
+                    </div>
+                    <div class="eachartlist clearfix" style="height: auto">
+                        <div class="eacharttab onethird" id="eacharttab1">
+                        </div>
+                        <div class="eacharttab onethird" id="eacharttab2">
+                        </div>
+                        <div class="eacharttab onethird" id="eacharttab3">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="DmpFine-box mb30">
+                <div class="DmpFine-box-title" style="padding: 0px">
+                    <div class="DmpFine-box-titleLeft">
+                        <div class="DmpFine-box-titleLeftText" style="font-size: 14px;border-left: 0px;padding-left: 0px">走势总览</div>
+                    </div>
+                    <div class="DmpFine-box-titleRight"></div>
+                </div>
+                <div class="DmpFine-box-body clearfix" style="padding-top: 30px">
+                    <div class="tabbolck">
+                        <div class="block on">近一周(按天)</div>
+                        <div class="block">近一月(按天)</div>
+                        <div class="block">近半年(按月)</div>
+                        <div class="block">近一年(按月)</div>
+                    </div>
+                    <div class="eachartzone clearfix">
+                        <div class="tabmenu">
+                            <div class="menubar on"><div class="dec">新增客户数</div></div>
+                            <div class="menubar"><div class="dec">来电客户数</div></div>
+                            <div class="menubar"><div class="dec">来访客户数</div></div>
+                            <div class="menubar"><div>签约客户数</div></div>
+                        </div>
+                        <div class="eacharttab" id="eacharttab" style="width: 840px;float: left">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="./js/jquery-2.2.4.min.js"></script>
+<script src="./js/DmpFine.js"></script>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/index.js"></script>
+<script>
+        //echart点击切换
+        $(".block").click(function () {
+            $(".block").removeClass("on");
+            $(this).addClass("on");
+            //...
+        })
+        $(".menubar").click(function () {
+            $(".menubar").removeClass("on");
+            $(this).addClass("on");
+            //...
+        })
+
+        sexTable($('#eacharttab')[0]);
+        /*性别*/
+        function sexTable(obj) {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(obj);
+
+            var data = [["2000-06-05",116],["2000-06-06",129],["2000-06-07",135],["2000-06-08",86],["2000-06-09",73],["2000-06-10",85],["2000-06-11",73],["2000-06-12",68],["2000-06-13",92],["2000-06-14",130],["2000-06-15",245],["2000-06-16",139],["2000-06-17",115],["2000-06-18",111],["2000-06-19",309],["2000-06-20",206],["2000-06-21",137],["2000-06-22",128],["2000-06-23",85],["2000-06-24",94],["2000-06-25",71],["2000-06-26",106],["2000-06-27",84],["2000-06-28",93],["2000-06-29",85],["2000-06-30",73],["2000-07-01",83],["2000-07-02",125],["2000-07-03",107],["2000-07-04",82],["2000-07-05",44],["2000-07-06",72],["2000-07-07",106],["2000-07-08",107],["2000-07-09",66],["2000-07-10",91],["2000-07-11",92],["2000-07-12",113],["2000-07-13",107],["2000-07-14",131],["2000-07-15",111],["2000-07-16",64],["2000-07-17",69],["2000-07-18",88],["2000-07-19",77],["2000-07-20",83],["2000-07-21",111],["2000-07-22",57],["2000-07-23",55],["2000-07-24",60]];
+
+            var dateList = data.map(function (item) {
+                return item[0];
+            });
+            var valueList = data.map(function (item) {
+                return item[1];
+            });
+
+            option = {
+
+                // Make gradient line here
+                visualMap: [{
+                    show: false,
+                    type: 'continuous',
+                    seriesIndex: 0,
+                    min: 0,
+                    max: 400
+                }],
+                tooltip: {
+                    trigger: 'axis'
+                },
+                xAxis: [{
+                    data: dateList
+                }],
+                yAxis: [{
+                    splitLine: {show: false}
+                }],
+                grid: [{
+                    top:'10%',
+                    bottom: '20%'
+                }],
+                series: [{
+                    name:'新增客户',
+                    type: 'line',
+                    showSymbol: false,
+                    data: valueList
+                }]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+
+        }
+    ageTable();
+    /*年龄*/
+    function ageTable() {
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart1 = echarts.init($('#eacharttab1')[0]);
+        var myChart2 = echarts.init($('#eacharttab2')[0]);
+        var myChart3 = echarts.init($('#eacharttab3')[0]);
+
+        option = {
+            title:{
+                top: 30,
+                left: 'center',
+                text: '客户来源',
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            legend: {
+                orient: 'horizontal',
+                icon: 'circle',
+                top: 'bottom',
+                left: 'center',
+                data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+            },
+            color: ['#FA3B37', '#00B557', '#FFC200', '#F4A52A','#498CF7',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
+            series: [
+                {
+                    name:'访问来源',
+                    type:'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data:[
+                        {value:335, name:'直接访问',},
+                        {value:310, name:'邮件营销'},
+                        {value:234, name:'联盟广告'},
+                        {value:135, name:'视频广告'},
+                        {value:1548, name:'搜索引擎'}
+                    ]
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart1.setOption(option);
+        myChart2.setOption(option);
+        myChart3.setOption(option);
+
+    }
+
+</script>
+</html>

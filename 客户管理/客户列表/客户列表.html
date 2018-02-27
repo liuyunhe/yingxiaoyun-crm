@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="../../css/DMPbase.css" />
+  <link rel="stylesheet" href="../../css/DmpFine.css" />
+  <style>
+    .DmpFine-textInput01,.DmpFine-textSelect1{
+      width: calc((100% - 60px)/4);
+    }
+    .main_cont {
+      width: 1080px;
+      background: url(../../images/bg_main_left.png) repeat-y #f5f5f5;
+      /* min-height: calc(100vh - 20px); */
+      padding-bottom: 20px;
+      min-height: 100%;
+    }
+  </style>
+</head>
+
+<body style="width: 1080px">
+  <div class="main_cont">
+    <div class="DmpFine-title" style="width: 1080px">
+      <div class="DmpFine-titleLeft DmpFine-textcolor3">
+        <a href="javaScript:;">客户数据中心</a>>
+        <a href="javaScript:;">客户管理</a>>
+        <a href="javaScript:;">客户列表</a>
+      </div>
+      <div class="DmpFine-titleRight">
+        <button class="DmpFine-btn01 fl" style="margin-top:8px;margin-right: 20px">查询</button>
+        <button class="DmpFine-btn04 fl" style="margin-top:8px">重置</button>
+      </div>
+    </div>
+    <div class="DmpFine-mainBox">
+      <div class="nav">
+        <div class="navlow">
+          <div class="DmpFine-textSelect1">
+            <span class="textSelectLeft">客户状态</span>
+            <span class="textSelectRight">
+              <div class="dmp-select" id="DmpFine_select1">
+                  <input class="type_id" name="dateTye" type="hidden" value="0">
+                  <div class="font_type_id">名流汇</div>
+                  <span></span>
+                <div class="dmp-select-option" id="DmpFine_select2" style="display: none;">
+                  <p data-v="0">名流汇1</p>
+                  <p data-v="1">名流汇2</p>
+                  <p data-v="2">名流汇3</p>
+                </div>
+              </div>
+            </span>
+          </div>
+          <div class="DmpFine-textInput DmpFine-textInput01">
+            <span class="textInputLeft">客户姓名</span>
+            <input class="textInputRight" name=""  type="text">
+          </div>
+          <div class="DmpFine-textInput DmpFine-textInput01">
+            <span class="textInputLeft">手机号码</span>
+            <input class="textInputRight" name=""  type="text">
+          </div>
+        </div>
+
+        <div class="DmpFine-box clearfix">
+          <div class="DmpFine-box-title">
+            <div class="DmpFine-box-titleLeft">
+              共有客户<span style="color:#ff5400">XXXXXX</span>个
+            </div>
+            <div class="DmpFine-box-titleRight">
+              <button class="DmpFine-btn02 fl" style="margin-top:8px">标签搜索</button>
+              <button class="DmpFine-btn02 fl" style="margin-top:8px">导入</button>
+              <button class="DmpFine-btn02 fl" style="margin-top:8px">导出</button>
+            </div>
+          </div>
+          <div class="DmpFine-box-body clearfix">
+            <div class="DmpFine-table">
+              <table>
+                <thead>
+                <tr>
+                  <td><span class="selectcheckbox allselectcheckbox"></span></td>
+                  <td>客户姓名</td>
+                  <td>手机号码</td>
+                  <td>客户状态</td>
+                  <td>性别</td>
+                  <td>年龄</td>
+                  <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="selectcheckbox"></span></td>
+                  <td>张三</td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;">详情</a>
+                    <a href="javascript:;">外呼</a>
+                    <a href="javascript:;">跟进</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="7"  style="border: 0px">
+                    <div class="DmpFine-goPage clearfix">
+                      <div class="goPage clearfix">
+                        <a href="javascript:void(0);" class="goPage-box noPrveAndNext">|&lt;</a>
+                        <a href="javascript:void(0);" class="goPage-box noPrveAndNext">上一页</a>
+                        <div class="pageNum"><a href="javaScript:void(0);" class="goPage-box selected" no_data="0">1</a>&nbsp;<a href="javaScript:void(0);"
+                                                                                                                                 class="goPage-box" no_data="0">2</a>&nbsp;<a href="javaScript:void(0);" class="goPage-box" no_data="0">3</a></div>
+                        <a href="javascript:void(0);" class="goPage-box" id="nextPage" page="2">下一页</a>
+                        <a href="javascript:void(0);" class="goPage-box" id="lastPage" page="3">&gt;|</a>
+                        <input class="goPage-input" type="text" name="cpage" onkeyup="this.value=this.value.replace(/\D/g,'')">
+                        <a class="goPage-box" href="javascript:void(0);" id="goPage">跳转</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="../../js/jquery-2.2.4.min.js"></script>
+<script src="../../js/DmpFine.js"></script>
+<script>
+  $(function () {
+    new SlidingLayer($("#DmpFine_select1"), $("#DmpFine_select2"));
+    $(".dmp-select-option p").click(function () {
+      $(this).parent().prev().prev().prev().val($(this).data("v"));
+      $(this).parent().prev().prev().html($(this).html());
+      $(this).parent().hide();
+    });
+  });
+  tablecheckbox()
+</script>
+
+</html>

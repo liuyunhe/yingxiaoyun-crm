@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新增、编辑客群</title>
+    <script src="../../js/My97DatePicker/WdatePicker.js"></script>
+    <link rel="stylesheet" href="../../css/DMPbase.css"/>
+    <link rel="stylesheet" href="../../css/DmpFine.css"/>
+    <style>
+        .special-tree-til{background-color: #ffffff;border: 1px solid #dfdfdf;}
+        .special-tree-con{padding: 10px;border: 1px solid #dfdfdf;margin-top: -1px;}
+        .DmpFine-special-tree .special-tree-item{margin: 10px 20px;}
+        .DmpFine-special-tree .taggroup-select:last-child{display: none;}
+        .special-tree-con .special-slide,
+        .special-tree-con .special-icon{float: right;width:24px;height:30px;cursor:pointer;background: url('../../images/special-del.png') center no-repeat;margin-top: -4px;}
+        .special-tree-con .special-slide{background-image: url('../../images/special-up.png');}
+        .special-tree-con .special-slide.selected{background-image: url('../../images/special-down.png')}
+        .special-font{background-color: #eeeeee;}  /*base.css里边改*/
+        .main-body{height: 400px;overflow-y: auto;width: 100%}
+        .special-select p {padding-left: 6px;}
+        .special-select{padding-left: 0px}
+    </style>
+</head>
+<body>
+
+<div class="DmpFine-box clearfix kqgl-bjkq">
+    <div class="DmpFine-box-title">
+        <div class="DmpFine-box-titleLeft">
+            <div class="DmpFine-box-titleLeftText">新增客群</div>
+        </div>
+        <div class="DmpFine-box-titleRight"><span class="delbtn">x</span></div>
+    </div>
+    <div class="main-body">
+        <div class="DmpFine-box-body clearfix">
+            <div class="DmpFine-sontil ml40">基础信息</div>
+            <div class="DmpFine-box-row fl">
+                <div class="DmpFine-box-row-left">
+                    <span class="DmpFine-textcolor5">*</span>
+                    客群名称
+                </div>
+                <div class="DmpFine-box-row-right mr40">
+                    <input type="text" class="DmpFine-textInput02"/>
+                </div>
+                <div class="DmpFine-box-row-left">
+                    <span class="DmpFine-textcolor5">*</span>
+                    客群来源
+                </div>
+                <div class="DmpFine-box-row-right mr40">
+                    <div class="dmp-select DmpFine-selectW02" id="DmpFine_select1">
+                        <input class="type_id" name="dateTye" type="hidden" value="0">
+                        <div class="font_type_id">&nbsp;</div>
+                        <span></span>
+                        <div class="dmp-select-option" id="DmpFine_select2" style="display: none;">
+                            <p data-v="0">一周内</p>
+                            <p data-v="1">一个月内</p>
+                            <p data-v="2">三个月内</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="DmpFine-box-row fl clearfix w100" style="height:auto;margin-bottom:0;">
+                <div class="DmpFine-box-row-left">
+                    描述
+                </div>
+                <div class="DmpFine-box-row-right">
+                    <textarea name="" id="" cols="30" rows="10" style="width:552px"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="DmpFine-p20box clearfix">
+            <div class="main20box">
+                <div class="main20box-left" style="width: 30%;">
+                    <div class="DmpFine-interbox clearfix">
+                        <div class="box50low">
+                            <div class="DmpFine-searchInput01 clearfix" style="width: 100%;">
+                                <input type="text"/>
+                                <span class="search-icon"></span>
+                            </div>
+                        </div>
+                        <div class="DmpFine-interbox-body" style="height: calc(100% - 50px);overflow: auto;">
+                            <div class="DmpFine-tree" style="height:300px;">
+                                <div class="tree-body">
+                                    <div class="DmpFine-tree-row ctrl">
+                                        <i></i><span class="selecttext">myhomef.cn</span>
+                                    </div>
+                                    <div class="DmpFine-tree-rowSon">
+                                        <div class="DmpFine-tree-row ctrl">
+                                            <i></i><span class="selecttext">myhomef.cn</span>
+                                        </div>
+                                        <div class="DmpFine-tree-rowSon bqType">
+                                            <div class="DmpFine-tree-row ctrl">
+                                                <i></i><span class="selecttext">美好社区志愿者公益基金会</span>
+                                            </div>
+                                            <div class="DmpFine-tree-row ctrl">
+                                                <i></i><span class="selecttext">集团本部</span>
+                                            </div>
+                                            <div class="DmpFine-tree-row ctrl">
+                                                <i></i><span class="selecttext">美好生活</span>
+                                            </div>
+                                            <div class="DmpFine-tree-row ctrl">
+                                                <i></i><span class="selecttext">总经理办公室</span>
+                                            </div>
+                                            <div class="DmpFine-tree-row ctrl">
+                                                <i></i><span class="selecttext">基础物业</span>
+                                            </div>
+                                            <div class="DmpFine-tree-row ctrl">
+                                                <i></i><span class="selecttext">生活配套</span>
+                                            </div>
+                                        </div>
+                                        <div class="DmpFine-tree-row ctrl">
+                                            <i></i><span class="selecttext">0006677.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="DmpFine-tree-row ctrl">
+                                        <i></i><span class="selecttext">myhomef.cn</span>
+                                    </div>
+                                    <div class="DmpFine-tree-rowSon xwType">
+                                        <div class="DmpFine-tree-row ctrl">
+                                            <i></i><span class="selecttext">美好社区志愿者公益基金会</span>
+                                        </div>
+                                        <div class="DmpFine-tree-row ctrl">
+                                            <i></i><span class="selecttext">集团本部</span>
+                                        </div>
+                                        <div class="DmpFine-tree-row ctrl">
+                                            <i></i><span class="selecttext">美好生活</span>
+                                        </div>
+                                        <div class="DmpFine-tree-row ctrl">
+                                            <i></i><span class="selecttext">总经理办公室</span>
+                                        </div>
+                                        <div class="DmpFine-tree-row ctrl">
+                                            <i></i><span class="selecttext">基础物业</span>
+                                        </div>
+                                        <div class="DmpFine-tree-row ctrl">
+                                            <i></i><span class="selecttext">生活配套</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main20box-right" style="width:calc(70% - 20px);">
+                    <div class="DmpFine-interbox clearfix">
+                        <div class="DmpFine-interbox-body h100">
+                            <div class="DmpFine-special-tree">
+                                <!--<div class="special-tree-item">
+                                    <div class="special-tree-til">
+                                        客户接触行为&#45;&#45;有来电记录
+                                        <span class="special-icon"></span>
+                                        <span class="special-slide"></span>
+                                    </div>
+                                    <div class="special-tree-con clearfix">
+                                        <div class="mt10">
+                                            <span class="special-tree-leftTil">时间 > =</span><input type="text" class="DmpFine-textInput02 mr40">
+                                            <span class="special-tree-leftTil">时间 < =</span><input type="text" class="DmpFine-textInput02">
+                                        </div>
+                                        <div class="fl mt10">
+                                            <span class="special-tree-leftTil">次数</span>
+                                            <div class="special-text">
+                                                <div class="special-font"></div>
+                                                <div class="special-select">
+                                                    <p>大于</p>
+                                                    <p>小于</p>
+                                                    <p>等于</p>
+                                                    <p>介于</p>
+                                                </div>
+                                            </div>
+                                            <input type="number" class="DmpFine-textInput02">
+                                            <span class="numarea">至</span>
+                                            <input type="number" class="DmpFine-textInput02">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="taggroup-select">
+                                    <div class="special-text">
+                                        <div class="special-font">或</div>
+                                        <div class="special-select" style="display: none;">
+                                            <p>且</p>
+                                            <p>或</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="special-tree-item">
+                                    <div class="special-tree-con">
+                                        基本信息-性别：男
+                                        <span class="special-icon"></span>
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="DmpFine-box-footer">
+            <button class="DmpFine-btn01" onclick="readCon()">保存</button>
+            <button class="DmpFine-btn02" onclick="hideMess()">取消</button>
+        </div>
+    </div>
+
+    <!--<div class="clearfix mt20">-->
+        <!--<span class="fl mt5 mr20 DmpFine-textcolor3 ml20">描述</span><input type="text" id="describe" class="DmpFine-textInput02 DmpFine-textcolor5" readonly style="width: calc(100% - 80px);">-->
+    <!--</div>-->
+
+</div>
+</body>
+<script src="../../js/jquery-2.2.4.min.js"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js"></script>
+<script src="../../js/DmpFine.js"></script>
+<script src="../../js/to-english.js"></script>
+<script>
+    $(function(){
+        /*设置弹窗1000px左右比较合适*/
+        /*初始化下拉框时，如果是多选就给第三个参数true*/
+        new SlidingLayer($("#DmpFine_select1"), $("#DmpFine_select2"));
+        new SlidingLayer($("#DmpFine_select3"), $("#DmpFine_select4"),true);
+        new SlidingLayer($("#DmpFine_select5"), $("#DmpFine_select6"),true);
+        $(".dmp-select-option p").click(function () {
+            $(this).parent().prev().prev().prev().val($(this).data("v"));
+            $(this).parent().prev().prev().html($(this).html());
+            $(this).parent().hide();
+        });
+        /*下面3个是下拉多选框*/
+        $('.dmp-select').on('click','.dmp-select-footer .DmpFine-btn01',function(){
+            var _this = this;
+            if($(this).parents('.dmp-select-option').find('.allselect').hasClass('selected')){
+                $(this).parents('.dmp-select').find('.font_type_id').text('全部');
+                $(this).parents('.dmp-select').find('.type_id').val('');
+            }else{
+                var text='';
+                var hidetextarr = [];
+                $(this).parents('.dmp-select-option').find('.dmp-select-sonbox .selected').each(function(){
+                    text += $(this).next().text();
+                    hidetextarr.push( $(this).attr('id'));
+                })
+                if(!text.trim() || $(this).parents('.dmp-select').find('.allselect').hasClass('selected')){
+                    $(this).parents('.dmp-select').find('.font_type_id').text('全部');
+                    $(this).parents('.dmp-select').find('.type_id').val('');
+                }else{
+                    $(this).parents('.dmp-select').find('.font_type_id').text(text);
+                    $(this).parents('.dmp-select').find('.type_id').val(hidetextarr.join(','));
+                }
+            }
+            _this.timer = setTimeout(function () {
+                $(_this).parents('.dmp-select-option').hide();
+                if($(_this).parents('.dmp-select').find('.dmp-select-option-quick').length>0){
+                    $(_this).parents('.dmp-select').find('input[type="search"]').val('');
+                    $(_this).parents('.dmp-select-option-quick').find('.dmp-select-sonbox div').show();
+                }
+            }, 300);
+        })
+        $('.dmp-select').on('click','.dmp-select-footer .DmpFine-btn02',function(){
+            $(this).parents('.dmp-select').find('.selectcheckbox').removeClass('selected');
+        })
+        $('.dmp-select').on('click','.selectcheckbox',function(){
+            if($(this).hasClass('allselect')){     //判断自身是否全选
+                if($(this).hasClass('selected')){  //判断自身是否选中
+                    $(this).removeClass('selected').parent().next().find('.selectcheckbox').removeClass('selected');
+                }else{
+                    $(this).addClass('selected').parent().next().find('.selectcheckbox').addClass('selected');
+                }
+            }else{
+                var sonbox = $(this).parents('.dmp-select-sonbox');
+                if($(this).hasClass('selected')){
+                    $(this).removeClass('selected');
+                    sonbox.prev().find('.allselect').removeClass('selected');
+                }else{
+                    $(this).addClass('selected');
+                    if(sonbox.find('.selectcheckbox').length === sonbox.find('.selected').length){
+                        sonbox.prev().find('.allselect').addClass('selected');
+                    }
+                }
+            }
+        })
+    });
+    /*初始化左边的树样式*/
+    DmpFineTreeInit();
+
+    /*为右边下拉框绑定事件*/
+    $('.DmpFine-special-tree').on('click','.special-font',function(){
+        $(this).next().slideDown();
+    })
+    $('.DmpFine-special-tree').on('mouseleave','.special-text',function(){
+        $(this).find('.special-select').slideUp();
+    })
+    $('.DmpFine-special-tree').on('click','.special-select p',function(){
+        $(this).parents('.special-text').find('.special-font').text($(this).text());
+        $(this).parents('.special-text').find('.special-select').slideUp();
+        if($(this).text() === '介于'){
+            $(this).parents('.special-text').next().show();
+        }else{
+            $(this).parents('.special-text').next().hide();
+        }
+    })
+    /*右边按钮选择*/
+    $('.DmpFine-special-tree').on('click','.DmpFine-btn100',function(){
+        $(this).toggleClass('selected');
+    })
+
+    /*下拉框多选快速搜索*/
+    quickSearchMore1($('#DmpFine_select5'));
+
+    /*判断是否为数组*/
+    function isArray(o) {
+        return Object.prototype.toString.call(o) === '[object Array]';
+    }
+
+    $('.tree-body').on('click','.bqType .DmpFine-tree-row,.xwType .DmpFine-tree-row',function(){
+        writeCon(this);
+    })
+    /*右边的删除按钮绑定事件*/
+    $('.DmpFine-special-tree').on('click','.special-icon',function(){
+        $(this).parents('.special-tree-item').next().remove();
+        $(this).parents('.special-tree-item').remove();
+    })
+    /*右边的收起展开按钮绑定事件*/
+    $('.DmpFine-special-tree').on('click','.special-slide',function(){
+        if(!$(this).hasClass('selected')){
+            $(this).addClass('selected').parents('.special-tree-item').find('.special-tree-con').slideUp();
+        }else{
+            $(this).removeClass('selected').parents('.special-tree-item').find('.special-tree-con').slideDown();
+        }
+    })
+    /*生成右边框内容*/
+    var obj = [{"type":"bq","text":"myhomef.cn-myhomef.cn:美好社区志愿者公益基金会","symbolText":"且"},{"type":"xw","text":"集团本部","startTime":"2017-05-16","endTime":"2017-05-25","numType":"介于","startNum":"3","endNum":"10","symbolText":"或"},{"type":"bq","text":"myhomef.cn-myhomef.cn:总经理办公室","symbolText":"且"},{"type":"bq","text":"myhomef.cn-myhomef.cn:集团本部","symbolText":"无"}];
+    writeCon(obj);
+    function writeCon(obj){
+        var xwText = '<div class="special-tree-item xwType">'+
+                '<div class="special-tree-til">'+
+                '<span class="special-name"></span>'+
+                '<span class="special-icon"></span>'+
+                '<span class="special-slide"></span>'+
+                '</div>'+
+                '<div class="special-tree-con clearfix">'+
+                '<div>'+
+                '<span class="special-tree-leftTil">时间 > =</span><input type="text" class="DmpFine-textInput02 mr40"  onfocus=WdatePicker({lang:"zh-cn",dateFmt:"yyyy-MM-dd"})>'+
+                '<span class="special-tree-leftTil">时间 < =</span><input type="text" class="DmpFine-textInput02" onfocus=WdatePicker({lang:"zh-cn",dateFmt:"yyyy-MM-dd"})>'+
+                '</div>'+
+                '<div class="fl mt10">'+
+                '<span class="special-tree-leftTil">次数</span>'+
+                '<div class="special-text">'+
+                '<div class="special-font"></div>'+
+                '<div class="special-select">'+
+                '<p>大于</p>'+
+                '<p>等于</p>'+
+                '<p>小于</p>'+
+                '<p>介于</p>'+
+                '</div>'+
+                '</div>'+
+                '<div class="numberarea">'+
+                '<input type="number" class="DmpFine-textInput02">'+
+                '<span class="numarea">至</span>'+
+                '<input type="number" class="DmpFine-textInput02" >'+
+                '</div>'+
+                '</div>'+
+                '</div>'+
+                '</div>';
+        var bqText = '<div class="special-tree-item bqType">'+
+                '<div class="special-tree-con">'+
+                '<span class="special-name">'+bqNameText+'</span>'+
+                '<span class="special-icon"></span>'+
+                '</div>'+
+                '</div>';
+        var selectBox = '<div class="taggroup-select">'+
+                '<div class="special-text">'+
+                '<div class="special-font">且</div>'+
+                '<div class="special-select" style="display: none;">'+
+                '<p>且</p>'+
+                '<p>或</p>'+
+                '</div>'+
+                '</div>'+
+                '</div>';
+        if(!isArray(obj)){  /*不是回显时*/
+            var rowSon = $(obj).parent();
+            if(rowSon.hasClass('bqType')){   /*判断是否为标签*/
+                var bqObj = $(bqText+selectBox);
+                var bqNameText = $(obj).parents('.DmpFine-tree-rowSon').eq(1).prev().find('.selecttext').text()+'-'+
+                        $(obj).parents('.DmpFine-tree-rowSon').eq(0).prev().find('.selecttext').text()+':'+
+                        $(obj).text().trim();
+                bqObj.find('.special-name').text(bqNameText);
+                if($('.DmpFine-special-tree').children().length>0){
+                    $('.DmpFine-special-tree').children().eq(0).before(bqObj);
+                }else{
+                    $('.DmpFine-special-tree').append(bqObj);
+                }
+            }else{
+                var wxObj = $(xwText+selectBox);
+                var xwNameText = $(obj).text().trim();
+                wxObj.find('.special-name').text(xwNameText);
+                if($('.DmpFine-special-tree').children().length>0){
+                    $('.DmpFine-special-tree').children().eq(0).before(wxObj);
+                }else{
+                    $('.DmpFine-special-tree').append(wxObj);
+                }
+            }
+        }else{  /*回显时*/
+            for(var i =0;i<obj.length;i++){
+                if(obj[i].type == 'bq'){   /*判断是否为标签*/
+                    var bqObj = $(bqText);
+                    var selectObj = $(selectBox);
+                    bqObj.find('.special-name').text(obj[i].text);
+                    selectObj.find('.special-font').text(obj[i].symbolText);
+                    $('.DmpFine-special-tree').append(bqObj);
+                    $('.DmpFine-special-tree').append(selectObj);
+                }else{
+                    var wxObj = $(xwText);
+                    var selectObj = $(selectBox);
+                    wxObj.find('.special-name').text(obj[i].text);
+                    wxObj.find('.special-tree-con div').eq(0).find('.DmpFine-textInput02').eq(0).val(obj[i].startTime);
+                    wxObj.find('.special-tree-con div').eq(0).find('.DmpFine-textInput02').eq(1).val(obj[i].endTime);
+                    selectObj.find('.special-font').text(obj[i].symbolText);
+                    $('.DmpFine-special-tree').append(wxObj);
+                    $('.DmpFine-special-tree').append(selectBox);
+                    wxObj.find('.special-select p:contains('+obj[i].numType+')').click();
+                    wxObj.find('.numberarea').find('.DmpFine-textInput02').eq(0).val(obj[i].startNum);
+                    wxObj.find('.numberarea').find('.DmpFine-textInput02').eq(1).val(obj[i].endNum);
+                }
+            }
+        }
+
+    }
+    /*读取数据*/
+    function readCon(){
+        var json = [];
+        $('.special-tree-item').each(function(){
+            var obj = {};
+            if($(this).hasClass('bqType')){
+                obj.type = 'bq';
+                obj.text = $(this).find('.special-name').text();
+            }else{
+                obj.type = 'xw';
+                obj.text = $(this).find('.special-name').text();
+                obj.startTime = $(this).find('.special-tree-con div').eq(0).find('.DmpFine-textInput02').eq(0).val();
+                obj.endTime = $(this).find('.special-tree-con div').eq(0).find('.DmpFine-textInput02').eq(1).val();
+                obj.numType = $(this).find('.special-tree-con div').eq(1).find('.special-font').text();
+                obj.startNum = $(this).find('.numberarea').find('.DmpFine-textInput02').eq(0).val();
+                obj.endNum = $(this).find('.numberarea').find('.DmpFine-textInput02').eq(1).val();
+            }
+            var symbolText = $(this).next().css('display')=='none'?'无':$(this).next().find('.special-font').text();
+            obj.symbolText = symbolText;
+            json.push(obj);
+        })
+        return json;
+    }
+
+</script>
+</html>

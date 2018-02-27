@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>标签搜索</title>
+	<link rel="stylesheet" href="../../css/DMPbase.css"/>
+    <link rel="stylesheet" href="../../css/DmpFine.css"/>
+    <style>
+
+    </style>
+</head>
+<body>
+	<div class="tag-search-wrap">
+		<div class="DmpFine-box-title">
+	        <div class="DmpFine-box-titleLeft">
+	            <div class="DmpFine-box-titleLeftText">标签搜索</div>
+	        </div>
+	        <div class="DmpFine-box-titleRight">
+				<button class="DmpFine-btn04 fl" style="margin-top:8px">返回</button>
+            </div>
+	    </div>
+	    
+	    <div class="tag-search-box">
+	    	<div class="tag-search-item">
+	    		<div class="tag-search-title">
+	    			<strong class="fl">基础属性</strong>
+	    			<a href="javascript:;" class="fr">展开</a>
+	    		</div>
+	    		<div class="tag-search-con">
+	    			<dl>
+	    				<dt>性别</dt>
+	    				<dd>
+	    					<span class="on">全选</span>
+	    					<span>男</span>
+	    					<span>女</span>
+	    				</dd>
+	    			</dl>
+	    			<dl>
+	    				<dt>年龄</dt>
+	    				<dd>
+	    					<span class="on">50后</span>
+	    					<span>60后</span>
+	    					<span>70后</span>
+	    					<span>80后</span>
+	    					<span>90后</span>
+	    					<span>00后</span>
+	    				</dd>
+	    			</dl>
+	    			<dl>
+	    				<dt>身份职业</dt>
+	    				<dd>
+	    					<span class="on">医生</span>
+	    					<span>学生</span>
+	    					<span>教师</span>
+	    					<span>企业高管</span>
+	    					<span>工人</span>
+	    					<span>公务员</span>
+	    					<span>IT</span>
+	    					<span>服务员</span>
+	    				</dd>
+	    			</dl>
+	    			<dl>
+	    				<dt>婚姻情况</dt>
+	    				<dd>
+	    					<span class="on">已婚</span>
+	    					<span>未婚</span>
+	    				</dd>
+	    			</dl>
+	    			<dl>
+	    				<dt>常驻地</dt>
+	    				<dd>
+	    					<span class="on">本地</span>
+	    					<span>外地</span>
+	    				</dd>
+	    			</dl>
+	    			<dl>
+	    				<dt>车辆情况</dt>
+	    				<dd>
+	    					<span class="on">有车</span>
+	    					<span>无车</span>
+	    				</dd>
+	    			</dl>
+	    		</div>
+	    	</div>
+	    	<div class="tag-search-item">
+	    		<div class="tag-search-title">
+	    			<strong class="fl">兴趣标签</strong>
+	    			<a href="javascript:;" class="fr">展开</a>
+	    		</div>
+	    		<div class="tag-search-con">
+	    			<dl>
+	    				<dt>性别</dt>
+	    				<dd>
+	    					<span class="on">全选</span>
+	    					<span>男</span>
+	    					<span>女</span>
+	    				</dd>
+	    			</dl>
+	    			<dl>
+	    				<dt>年龄</dt>
+	    				<dd>
+	    					<span class="on">50后</span>
+	    					<span>60后</span>
+	    					<span>70后</span>
+	    					<span>80后</span>
+	    					<span>90后</span>
+	    					<span>00后</span>
+	    				</dd>
+	    			</dl>
+	    		</div>
+	    	</div>
+	    	<div class="tag-search-item">
+	    		<div class="tag-search-title">
+	    			<strong class="fl">需求标签</strong>
+	    			<a href="javascript:;" class="fr">展开</a>
+	    		</div>
+	    		<div class="tag-search-con">
+	    			<dl>
+	    				<dt>性别</dt>
+	    				<dd>
+	    					<span class="on">全选</span>
+	    					<span>男</span>
+	    					<span>女</span>
+	    				</dd>
+	    			</dl>
+	    			<dl>
+	    				<dt>年龄</dt>
+	    				<dd>
+	    					<span class="on">50后</span>
+	    					<span>60后</span>
+	    					<span>70后</span>
+	    					<span>80后</span>
+	    					<span>90后</span>
+	    					<span>00后</span>
+	    				</dd>
+	    			</dl>
+	    		</div>
+	    	</div>
+	    </div>
+	    
+	    <div class="save-btn-box">
+			<a href="javascript:;" class="save-btn">保存</a>
+			<a href="javascript:;" class="cancel-btn">取消</a>
+		</div>
+	    
+    </div>
+    
+    <script src="../../js/jquery-2.2.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	$(".tag-search-con dl dd span").click(function(){
+    		$(this).toggleClass('on');
+    	});
+    	
+    	$(".tag-search-title a").click(function(){
+    		var searchCon = $(this).parents(".tag-search-title").next(".tag-search-con");
+    		if(searchCon.is(":hidden")){
+    			searchCon.slideDown(200);
+    			$(this).text("收起").addClass("on");
+    		}else{
+    			searchCon.slideUp(200);
+    			$(this).text("展开").removeClass("on");
+    		}
+    	}).eq(0).trigger("click");
+    </script>
+</body>
+</html>

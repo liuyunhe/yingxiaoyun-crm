@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新增标签</title>
+    <link rel="stylesheet" href="../../css/DMPbase.css"/>
+    <link rel="stylesheet" href="../../css/DmpFine.css"/>
+    <style>
+        .DmpFine-tree-row b{cursor: pointer;}
+        .special-select{padding-left: 0;}
+        .special-select p{padding-left: 6px;}
+        .main-body{height: 400px;overflow-y: auto}
+    </style>
+</head>
+<body>
+    <div class="DmpFine-box clearfix kqgl-bjkq">
+        <div class="DmpFine-box-title">
+            <div class="DmpFine-box-titleLeft">
+                <div class="DmpFine-box-titleLeftText">新增客群</div>
+            </div>
+            <div class="DmpFine-box-titleRight">
+                <button class="DmpFine-btn04">返回</button>
+            </div>
+        </div>
+        <div class="main-body">
+            <div class="DmpFine-box-body clearfix">
+                <div class="DmpFine-sontil pl20 borb mb10">基础信息</div>
+                <div class="DmpFine-box-row fl">
+                    <div class="DmpFine-box-row-left">
+                        <span class="DmpFine-textcolor5">*</span>
+                        归属分类
+                    </div>
+                    <div class="DmpFine-box-row-right mr40">
+                        <div class="dmp-select DmpFine-selectW02" id="DmpFine_select1">
+                            <input class="type_id" name="dateTye" type="hidden" value="0">
+                            <div class="font_type_id">&nbsp;</div>
+                            <span></span>
+                            <div class="dmp-select-option" id="DmpFine_select2" style="display: none;">
+                                <p data-v="0">一周内</p>
+                                <p data-v="1">一个月内</p>
+                                <p data-v="2">三个月内</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="DmpFine-box-row-left">
+                        <span class="DmpFine-textcolor5">*</span>
+                        标签名称
+                    </div>
+                    <div class="DmpFine-box-row-right mr40">
+                        <input type="text" class="DmpFine-textInput02"/>
+                    </div>
+                </div>
+                <div class="DmpFine-box-row fl">
+                    <div class="DmpFine-box-row-left">
+                        <span class="DmpFine-textcolor5">*</span>
+                        标签类型
+                    </div>
+                    <div class="DmpFine-box-row-right mr40">
+                        <div class="dmp-select DmpFine-selectW02" id="DmpFine_select3">
+                            <input class="type_id" name="dateTye" type="hidden" value="0">
+                            <div class="font_type_id">&nbsp;</div>
+                            <span></span>
+                            <div class="dmp-select-option" id="DmpFine_select4" style="display: none;">
+                                <p data-v="0">一周内</p>
+                                <p data-v="1">一个月内</p>
+                                <p data-v="2">三个月内</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="DmpFine-box-row-left">
+                        <span class="DmpFine-textcolor5">*</span>
+                        标签状态
+                    </div>
+                    <div class="DmpFine-box-row-right mr40">
+                        <div class="dmp-select DmpFine-selectW02" id="DmpFine_select5">
+                            <input class="type_id" name="dateTye" type="hidden" value="0">
+                            <div class="font_type_id">&nbsp;</div>
+                            <span></span>
+                            <div class="dmp-select-option" id="DmpFine_select6" style="display: none;">
+                                <p data-v="0">一周内</p>
+                                <p data-v="1">一个月内</p>
+                                <p data-v="2">三个月内</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="DmpFine-box-row fl clearfix w100" style="height:auto;margin-bottom:0;">
+                    <div class="DmpFine-box-row-left">
+                        标签描述
+                    </div>
+                    <div class="DmpFine-box-row-right">
+                        <textarea name="" id="" cols="30" rows="10" style="width:552px"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="DmpFine-box-body clearfix">
+                <div class="DmpFine-sontil pl20 bort borb">标签内容</div>
+                <div class="DmpFine-p20box clearfix">
+                    <div class="main20box taggroup-box">
+                        <div class="main20box-left" style="width: 30%;">
+                            <div class="DmpFine-interbox clearfix">
+                                <div class="box50low">
+                                    <div class="DmpFine-searchInput01 clearfix" style="width: 100%;">
+                                        <input type="text"/>
+                                        <span class="search-icon"></span>
+                                    </div>
+                                </div>
+                                <div class="DmpFine-interbox-body" style="height: calc(100% - 50px);overflow: auto;">
+                                    <div class="DmpFine-tree">
+                                        <div class="tree-body">
+                                            <div class="DmpFine-tree-row">
+                                                <i></i><b>myhomef.cn</b>
+                                            </div>
+                                            <div class="DmpFine-tree-rowSon">
+                                                <div class="DmpFine-tree-row">
+                                                    <i></i><b>美好社区志愿者公益基金会</b>
+                                                </div>
+                                                <div class="DmpFine-tree-rowSon">
+                                                    <div class="DmpFine-tree-row">
+                                                        <i></i><b>美好集团投资有限公司</b>
+                                                    </div>
+                                                    <div class="DmpFine-tree-rowSon">
+                                                        <div class="DmpFine-tree-row">
+                                                            <i></i><b>集团本部</b>
+                                                        </div>
+                                                        <div class="DmpFine-tree-row">
+                                                            <i></i><b>美好生活</b>
+                                                        </div>
+                                                        <div class="DmpFine-tree-rowSon">
+                                                            <div class="DmpFine-tree-row">
+                                                                <i></i><b>总经理办公室</b>
+                                                            </div>
+                                                            <div class="DmpFine-tree-row">
+                                                                <i></i><b>基础物业</b>
+                                                            </div>
+                                                            <div class="DmpFine-tree-row">
+                                                                <i></i><b>生活配套</b>
+                                                            </div>
+                                                            <div class="DmpFine-tree-rowSon">
+                                                                <div class="DmpFine-tree-row">
+                                                                    <i></i><b>人和天地项目</b>
+                                                                </div>
+                                                                <div class="DmpFine-tree-row">
+                                                                    <i></i><b>邓甲项目</b>
+                                                                </div>
+                                                                <div class="DmpFine-tree-row">
+                                                                    <i></i><b>农利项目</b>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="DmpFine-tree-row">
+                                                    <i></i><b>0006677.com</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main20box-right" style="width:calc(70% - 20px);">
+                            <div class="DmpFine-interbox clearfix">
+                                <div>
+                                    <button class="DmpFine-btn100 mt10 ml20 mb10">添加组合</button>
+                                </div>
+                                <div class="taggroup-box-body">
+                                    <!--<div class="taggroup-item">
+                                        <div class="taggroup-item-til">
+                                            <span class="taggroup-text">组合1</span>
+                                            <span class="taggroup-icon"></span>
+                                            <span class="taggroup-slide"></span>
+                                        </div>
+                                        <div class="taggroup-item-con">
+                                            <div>
+                                                <input type="text" class="DmpFine-textInput02">
+                                                <span class="icon-add ml10"></span>
+                                                <span class="icon-con ml10"></span>
+                                            </div>
+                                            <div class="taggroup-select">
+                                                <div class="special-text">
+                                                    <div class="special-font">或</div>
+                                                    <div class="special-select" style="display: none;">
+                                                        <p>且</p>
+                                                        <p>或</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input type="text" class="DmpFine-textInput02">
+                                                <span class="icon-add ml10"></span>
+                                                <span class="icon-con ml10"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="taggroup-select">
+                                        <div class="special-text">
+                                            <div class="special-font">或</div>
+                                            <div class="special-select" style="display: none;">
+                                                <p>且</p>
+                                                <p>或</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="taggroup-item">
+                                        <div class="taggroup-item-til">
+                                            <span class="taggroup-text">组合1</span>
+                                            <span class="taggroup-icon"></span>
+                                            <span class="taggroup-slide"></span>
+                                        </div>
+                                        <div class="taggroup-item-con">
+                                            <div>
+                                                <input type="text" class="DmpFine-textInput02">
+                                                <span class="icon-add ml10"></span>
+                                                <span class="icon-con ml10"></span>
+                                            </div>
+                                            <div class="taggroup-select">
+                                                <div class="special-text">
+                                                    <div class="special-font">或</div>
+                                                    <div class="special-select" style="display: none;">
+                                                        <p>且</p>
+                                                        <p>或</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input type="text" class="DmpFine-textInput02">
+                                                <span class="icon-add ml10"></span>
+                                                <span class="icon-con ml10"></span>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="DmpFine-box-footer">
+            <button class="DmpFine-btn01" onclick="readCon()">保存</button>
+            <button class="DmpFine-btn02" onclick="hideMess()">取消</button>
+        </div>
+    </div>
+</body>
+<script src="../../js/jquery-2.2.4.min.js"></script>
+<script src="../../js/DmpFine.js"></script>
+<script src="../../js/to-english.js"></script>
+<script>
+    $(function(){
+        /*初始化下拉框时，如果是多选就给第三个参数true*/
+        new SlidingLayer($("#DmpFine_select1"), $("#DmpFine_select2"));
+        new SlidingLayer($("#DmpFine_select3"), $("#DmpFine_select4"));
+        new SlidingLayer($("#DmpFine_select5"), $("#DmpFine_select6"));
+        $(".dmp-select-option p").click(function () {
+            $(this).parent().prev().prev().prev().val($(this).data("v"));
+            $(this).parent().prev().prev().html($(this).html());
+            $(this).parent().hide();
+        });
+    });
+    /*初始化左边的树样式*/
+    DmpFineTreeInit();
+    var json1 = [{"tags":[{"tagCode":"美好社区志愿者公益基金会 = 美好集团投资有限公司","symbolText":"且"},{"tagCode":"美好集团投资有限公司 = 集团本部","symbolText":"无"}],"symbolText":"或"},{"tags":[{"tagCode":"美好集团投资有限公司 = 美好生活","symbolText":"或"},{"tagCode":"美好生活 = 总经理办公室","symbolText":"无"}],"symbolText":"无"}];
+    rightBoxCon(json1);
+    function rightBoxCon(json){
+        var bigBox = '<div class="taggroup-item">'+
+                           '<div class="taggroup-item-til">'+
+                                '<span class="taggroup-text">组合1</span>'+
+                                '<span class="taggroup-icon"></span>'+
+                                '<span class="taggroup-slide"></span>'+
+                           '</div>'+
+                                '<div class="taggroup-item-con">'+
+                                '</div>'+
+                       '</div>';
+        var smBox = '<div>'+
+                         '<input type="text" class="DmpFine-textInput02" readonly placeholder="请从右边选取合适的标签">'+
+                         '<span class="icon-add ml10"></span>'+
+                         '<span class="icon-con ml10"></span>'+
+                    '</div>';
+        var selectBox = '<div class="taggroup-select">'+
+                            '<div class="special-text">'+
+                            '<div class="special-font">或</div>'+
+                            '<div class="special-select" style="display: none;">'+
+                            '<p>且</p>'+
+                            '<p>或</p>'+
+                            '</div>'+
+                            '</div>'+
+                        '</div>';
+        /*添加大的新组合*/
+        $('.DmpFine-btn100').click(function(){
+            var obj = $(bigBox);
+            var tarObj = obj.find('.taggroup-item-con').append(smBox);
+            if($('.taggroup-item').length>0){
+                $('.taggroup-box-body').append(selectBox);
+            }
+            $('.taggroup-box-body').append(obj);
+        })
+        /*添加小的新组合*/
+        $('.taggroup-box-body').on('click','.icon-add',function(){
+            $(this).parents('.taggroup-item-con').append(selectBox+smBox);
+        })
+        /*删除大的组合*/
+        $('.taggroup-box-body').on('click','.taggroup-icon',function(){
+            if($(this).parents('.taggroup-item').prev().hasClass('taggroup-select')){
+                $(this).parents('.taggroup-item').prev().remove();
+            }
+            if($('.taggroup-item').index() == 0){
+                $(this).parents('.taggroup-item').next().remove();
+            }
+            $(this).parents('.taggroup-item').remove();
+        })
+        /*删除小的组合*/
+        $('.taggroup-box-body').on('click','.icon-con',function(){
+            if($(this).parent().prev().hasClass('taggroup-select')){
+                $(this).parent().prev().remove();
+            }
+            $(this).parent().remove();
+        })
+
+        /*回显*/
+        if(json){
+            for(var i= 0; i < json.length;i++){
+                var bigBoxObj = $(bigBox);
+                for(var j = 0; j < json[i].tags.length;j++){
+                    var smBoxObj = $(smBox);
+                    smBoxObj.find('.DmpFine-textInput02').val(json[i].tags[j].tagCode)
+                    bigBoxObj.find('.taggroup-item-con').append(smBoxObj);
+                    if(json[i].tags[j].symbolText != '无'){
+                        var smSelBox = $(selectBox);
+                        smSelBox.find('.special-font').text(json[i].tags[j].symbolText);
+                        bigBoxObj.find('.taggroup-item-con').append(smSelBox);
+                    }
+                }
+                $('.taggroup-box-body').append(bigBoxObj);
+                console.log(json[i].symbol)
+                if(json[i].symbolText != '无'){
+                    var bigSelBox = $(selectBox);
+                    bigSelBox.find('.special-font').text(json[i].symbolText);
+                    $('.taggroup-box-body').append(bigSelBox);
+                }
+            }
+        }
+    }
+    writeCon();
+    /*右边填充文本框*/
+    function writeCon(){
+        $('.taggroup-box-body').on('click','.DmpFine-textInput02',function(){
+            $('.DmpFine-textInput02.on').removeClass('on');
+            $(this).addClass('on');
+        });
+        $('.DmpFine-tree-rowSon .DmpFine-tree-rowSon .DmpFine-tree-row b').click(function(e){
+            e.stopPropagation();
+            var parText = $(this).parent().parent().prev().find('b').text();
+            if($('.DmpFine-textInput02.on').length>0){
+                $('.DmpFine-textInput02.on').val(parText +' = '+$(this).text());
+            }
+        })
+    }
+
+    /*读取数据*/
+    function readCon(){
+        var json = [];
+        $('.taggroup-item').each(function(){
+            var tagsArr = [],obj={};
+            $(this).find('.DmpFine-textInput02').each(function(){
+                var tagsObj = {};
+                tagsObj.tagCode = $(this).val();
+                var symbolText = $(this).parent().next().find('.special-font').text();
+                tagsObj.symbolText = symbolText?symbolText:'无';
+                tagsArr.push(tagsObj);
+            });
+            var symbolPar = $(this).next().find('.special-font').text();
+            obj.tags = tagsArr;
+            obj.symbolText = symbolPar?symbolPar:'无';
+            json.push(obj);
+        })
+        console.log(JSON.stringify(json))
+        return json;
+    }
+
+
+    /*下拉框*/
+    slideBox();
+    function slideBox(){
+        $(".taggroup-box-body").on('click','.special-font',function(e){
+            e.stopPropagation();	//阻止冒泡
+            var _this = $(this);
+            var selObj = _this.next(".special-select");
+            $(".special-select").hide();
+            selObj.show();
+            _this.parents("li").addClass("zIndex");
+            $(document).click(function(){
+                selObj.hide();
+                _this.parents("li").removeClass("zIndex");
+            });
+            if($(this).parents('.special-text').find('.DmpFine-searchInput01 input').length>0){
+                $(this).parents('.special-text').find('.DmpFine-searchInput01 input').val('');
+            }
+        });
+        $(".taggroup-box-body").on('click','.special-select p',function(e){
+            var _text = $(this).text();
+            var thisParent = $(this).parent();
+            thisParent.parents('.special-text').find(".special-font").text(_text);
+            $(this).parents('.special-select').hide();
+        });
+    }
+    flagShow();
+    /*展开收起*/
+    function flagShow(){
+        $(".taggroup-box-body").on('click','.taggroup-slide',function(e){
+            if($(this).hasClass('selected')){
+                $(this).removeClass('selected');
+                $(this).parents('.taggroup-item').find('.taggroup-item-con').slideDown();
+            }else{
+                $(this).addClass('selected');
+                $(this).parents('.taggroup-item').find('.taggroup-item-con').slideUp();
+            }
+        })
+    }
+</script>
+</html>

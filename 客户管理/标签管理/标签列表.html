@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="../../css/DMPbase.css" />
+  <link rel="stylesheet" href="../../css/DmpFine.css" />
+  <style>
+    .main_cont {
+      width: 1080px;
+      padding-bottom: 20px;
+      min-height: 100%;
+    }
+    .labelbox{
+      width: 100%;
+      height: 230px;
+      border: 1px solid #dfdfdf;
+      margin-bottom: 30px;
+    }
+    .labelbox-left{
+      width: 300px;
+      float: left;
+      height: 100%;
+      border-right:1px solid #dfdfdf;
+    }
+    .DmpFine-box-titleRight{
+      padding: 15px 0px;
+    }
+    .DmpFine-box-title{
+      background:rgba(245,245,245,1);
+    }
+    .control-pen{;float: left;width: 16px;height: 16px;background: url(./pen.png) center no-repeat;cursor: pointer;}
+    .control-delete{float: left;width: 16px;height: 16px;background: url(./delete.png) center no-repeat;cursor: pointer;}
+    .control-close{float: left;width: 16px;height: 16px;background: url(./close.png) center no-repeat;cursor: pointer;}
+    .control-add{margin: 0 auto;margin-top: 9px;width: 14px;height: 14px;background: url(./add.png) center no-repeat;cursor: pointer;}
+    .label.add{border-color:#FF5400 }
+    .label.on{border-color:#FF5400;color: #FF5400;background-color:rgba(253,243,238,1);  }
+    .content{padding: 20px 15px;height: 182px;overflow-y: auto}
+    .labelbox-right{width: 728px;float: right;height: 228px;overflow-y: auto;}
+    .label{cursor: pointer;margin-bottom: 15px;text-align: center;font-size: 14px;width: 110px;float: left;margin-right: calc((100% - 550px)/4);box-sizing: border-box;border: 1px solid #dfdfdf;height: 32px;line-height: 32px}
+    .label:nth-child(5n){margin-right: 0px}
+    .emt{height: 120px}
+    .emt-words{height: 20px;line-height: 20px;color: #999;text-align: center}
+    .label-wrap{padding: 20px 37px}
+    .table-wrap{display: none}
+    .DmpFine-box-titleLeft .control-pen,.DmpFine-box-titleLeft .control-delete{margin-top: 15px;margin-left: 15px}
+    .DmpFine-box-titleLeft .control-delete{margin-left: 10px}
+    table tr td{border-bottom: 0px;color: #333333;line-height: 34px;height: 34px}
+    .DmpFine-table>table>thead tr td{color:#999;font-size: 14px;font-weight: normal}
+    .ctrl .control-pen,.ctrl .control-delete{float: none;display: inline-block}
+    .labelroom{margin: 0 auto;width: 150px;height: 24px;line-height: 22px;box-sizing: border-box;border: 1px solid #dfdfdf;background-color: rgba(242,242,242,1);}
+    .labelroom.add{background-color: #fff}
+    .nav ::-webkit-scrollbar-track
+    {
+      /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+      border-radius: 0px;
+      background-color: #F5F5F5;
+      box-sizing: border-box;
+    }
+
+    .nav ::-webkit-scrollbar
+    {
+      width: 6px;
+      background-color: #F5F5F5;
+      box-sizing: border-box;
+    }
+
+    .nav ::-webkit-scrollbar-thumb
+    {
+      border-radius: 4px;
+      /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+      background-color: #999;
+    }
+
+  </style>
+</head>
+
+<body style="width: 1080px">
+  <div class="main_cont">
+    <div class="DmpFine-title" style="width: 1080px">
+      <div class="DmpFine-titleLeft DmpFine-textcolor3">
+        <a href="javaScript:;">客户数据中心</a>>
+        <a href="javaScript:;">客户管理</a>>
+        <a href="javaScript:;">标签管理</a>
+      </div>
+      <div class="DmpFine-titleRight">
+        <button class="DmpFine-btn01 fl" style="margin-top:8px;margin-right: 20px">新增</button>
+        <div class="DmpFine-searchInput01 clearfix fl" style="margin-top: 7.5px">
+          <input type="text" placeholder="请输入二级类别或标签名称">
+          <span class="search-icon"></span>
+        </div>
+      </div>
+    </div>
+    <div class="DmpFine-mainBox">
+      <div class="nav">
+        <div class="labelbox">
+          <div class="labelbox-left">
+            <div class="DmpFine-box-title">
+              <div class="DmpFine-box-titleLeft">
+                <strong>基本消息</strong>
+              </div>
+              <div class="DmpFine-box-titleRight">
+                <i class="control-pen"></i>
+                <i class="control-delete"></i>
+              </div>
+            </div>
+            <div class="content">
+              <span>用户相对固定的基础性信息标签，它们不会随着行为的改变而改变。基本信息包括用户的人口属性(如性别、年龄、地域、职业、收入等)、商业属性(如客户属性、客户等级等）用户相对固定的基础性信息标签，它们不会随着行为的改变而改变。基本信息包括用户的人口属性(如性别、年龄、地域、职业、收入等)、商业属性(如客户属性、客户等级等）</span>
+            </div>
+          </div>
+        <div class="labelbox-right">
+          <div class="label-wrap">
+            <div class="label add"><div class="control-add"></div></div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+          </div>
+          <div class="table-wrap">
+            <div class="DmpFine-box-title">
+              <div class="DmpFine-box-titleLeft">
+                <strong class="fl">行为信息</strong>
+                <i class="control-pen"></i>
+                <i class="control-delete"></i>
+              </div>
+              <div class="DmpFine-box-titleRight">
+                <i class="control-close"></i>
+              </div>
+            </div>
+            <div class="DmpFine-table">
+              <table>
+                <thead>
+                <tr>
+                  <td>标签名称</td>
+                  <td>标签类型</td>
+                  <td>标签客户数</td>
+                  <td>标签编码</td>
+                  <td>创建时间</td>
+                  <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom add">+添加标签</div></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                  </td>
+                <tr>
+                  <td colspan="6"  style="border: 0px">
+                    <div class="DmpFine-goPage clearfix">
+                      <div class="goPage clearfix">
+                        <a href="javascript:void(0);" class="goPage-box noPrveAndNext">|&lt;</a>
+                        <a href="javascript:void(0);" class="goPage-box noPrveAndNext">上一页</a>
+                        <div class="pageNum"><a href="javaScript:void(0);" class="goPage-box selected" no_data="0">1</a>&nbsp;<a href="javaScript:void(0);"
+                                                                                                                                 class="goPage-box" no_data="0">2</a>&nbsp;<a href="javaScript:void(0);" class="goPage-box" no_data="0">3</a></div>
+                        <a href="javascript:void(0);" class="goPage-box" id="nextPage" page="2">下一页</a>
+                        <a href="javascript:void(0);" class="goPage-box" id="lastPage" page="3">&gt;|</a>
+                        <input class="goPage-input" type="text" name="cpage" onkeyup="this.value=this.value.replace(/\D/g,'')">
+                        <a class="goPage-box" href="javascript:void(0);" id="goPage">跳转</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+        <div class="labelbox">
+          <div class="labelbox-left">
+            <div class="DmpFine-box-title">
+              <div class="DmpFine-box-titleLeft">
+                <strong>需求偏好</strong>
+              </div>
+              <div class="DmpFine-box-titleRight">
+                <i class="control-pen"></i>
+                <i class="control-delete"></i>
+              </div>
+            </div>
+            <div class="content">
+              <span>用户相对固定的基础性信息标签，它们不会随着行为的改变而改变。基本信息包括用户的人口属性(如性别、年龄、地域、职业、收入等)、商业属性(如客户属性、客户等级等）用户相对固定的基础性信息标签，它们不会随着行为的改变而改变。基本信息包括用户的人口属性(如性别、年龄、地域、职业、收入等)、商业属性(如客户属性、客户等级等）</span>
+            </div>
+          </div>
+        <div class="labelbox-right">
+          <div class="label-wrap">
+            <div class="label add"><div class="control-add"></div></div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+          </div>
+          <div class="table-wrap">
+            <div class="DmpFine-box-title">
+              <div class="DmpFine-box-titleLeft">
+                <strong class="fl">行为信息</strong>
+                <i class="control-pen"></i>
+                <i class="control-delete"></i>
+              </div>
+              <div class="DmpFine-box-titleRight">
+                <i class="control-close"></i>
+              </div>
+            </div>
+            <div class="DmpFine-table">
+              <table>
+                <thead>
+                <tr>
+                  <td>标签名称</td>
+                  <td>标签类型</td>
+                  <td>标签客户数</td>
+                  <td>标签编码</td>
+                  <td>创建时间</td>
+                  <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom add">+添加标签</div></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                  </td>
+                <tr>
+                  <td colspan="6"  style="border: 0px">
+                    <div class="DmpFine-goPage clearfix">
+                      <div class="goPage clearfix">
+                        <a href="javascript:void(0);" class="goPage-box noPrveAndNext">|&lt;</a>
+                        <a href="javascript:void(0);" class="goPage-box noPrveAndNext">上一页</a>
+                        <div class="pageNum"><a href="javaScript:void(0);" class="goPage-box selected" no_data="0">1</a>&nbsp;<a href="javaScript:void(0);"
+                                                                                                                                 class="goPage-box" no_data="0">2</a>&nbsp;<a href="javaScript:void(0);" class="goPage-box" no_data="0">3</a></div>
+                        <a href="javascript:void(0);" class="goPage-box" id="nextPage" page="2">下一页</a>
+                        <a href="javascript:void(0);" class="goPage-box" id="lastPage" page="3">&gt;|</a>
+                        <input class="goPage-input" type="text" name="cpage" onkeyup="this.value=this.value.replace(/\D/g,'')">
+                        <a class="goPage-box" href="javascript:void(0);" id="goPage">跳转</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+        <div class="labelbox">
+          <div class="labelbox-left">
+            <div class="DmpFine-box-title">
+              <div class="DmpFine-box-titleLeft">
+                <strong>行为信息</strong>
+              </div>
+              <div class="DmpFine-box-titleRight">
+                <i class="control-pen"></i>
+                <i class="control-delete"></i>
+              </div>
+            </div>
+            <div class="content">
+              <span>用户相对固定的基础性信息标签，它们不会随着行为的改变而改变。基本信息包括用户的人口属性(如性别、年龄、地域、职业、收入等)、商业属性(如客户属性、客户等级等）用户相对固定的基础性信息标签，它们不会随着行为的改变而改变。基本信息包括用户的人口属性(如性别、年龄、地域、职业、收入等)、商业属性(如客户属性、客户等级等）</span>
+            </div>
+          </div>
+        <div class="labelbox-right">
+          <div class="label-wrap">
+            <div class="label add"><div class="control-add"></div></div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+            <div class="label">客户属性</div>
+          </div>
+          <div class="table-wrap">
+            <div class="DmpFine-box-title">
+              <div class="DmpFine-box-titleLeft">
+                <strong class="fl">行为信息</strong>
+                <i class="control-pen"></i>
+                <i class="control-delete"></i>
+              </div>
+              <div class="DmpFine-box-titleRight">
+                <i class="control-close"></i>
+              </div>
+            </div>
+            <div class="DmpFine-table">
+              <table>
+                <thead>
+                <tr>
+                  <td>标签名称</td>
+                  <td>标签类型</td>
+                  <td>标签客户数</td>
+                  <td>标签编码</td>
+                  <td>创建时间</td>
+                  <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom">标签名称</div></td>
+                  <td>13500000001</td>
+                  <td>主动来电</td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                    <a href="javascript:;"><i class="control-pen"></i></a>
+                    <a href="javascript:;"><i class="control-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="labelroom add">+添加标签</div></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="ctrl">
+                  </td>
+                <tr>
+                  <td colspan="6"  style="border: 0px">
+                    <div class="DmpFine-goPage clearfix">
+                      <div class="goPage clearfix">
+                        <a href="javascript:void(0);" class="goPage-box noPrveAndNext">|&lt;</a>
+                        <a href="javascript:void(0);" class="goPage-box noPrveAndNext">上一页</a>
+                        <div class="pageNum"><a href="javaScript:void(0);" class="goPage-box selected" no_data="0">1</a>&nbsp;<a href="javaScript:void(0);"
+                                                                                                                                 class="goPage-box" no_data="0">2</a>&nbsp;<a href="javaScript:void(0);" class="goPage-box" no_data="0">3</a></div>
+                        <a href="javascript:void(0);" class="goPage-box" id="nextPage" page="2">下一页</a>
+                        <a href="javascript:void(0);" class="goPage-box" id="lastPage" page="3">&gt;|</a>
+                        <input class="goPage-input" type="text" name="cpage" onkeyup="this.value=this.value.replace(/\D/g,'')">
+                        <a class="goPage-box" href="javascript:void(0);" id="goPage">跳转</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="labelbox">
+          <div class="labelbox-left">
+            <div class="DmpFine-box-title">
+              <div class="DmpFine-box-titleLeft">
+                <strong>xxxx</strong>
+              </div>
+              <div class="DmpFine-box-titleRight">
+                <i class="control-pen"></i>
+                <i class="control-delete"></i>
+              </div>
+            </div>
+            <div class="content">
+              <span></span>
+            </div>
+          </div>
+          <div class="labelbox-right" style="overflow: hidden">
+            <div class="label-wrap" style="text-align: center;">
+              <div class="emt"></div>
+              <div class="emt-words">这里还没有标签噢，赶快点击下面的按钮新建标签吧~</div>
+              <button class="DmpFine-btn01" style="margin-top: 20px">新增二级标签分类</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../../js/jquery-2.2.4.min.js"></script>
+<script src="../../js/DmpFine.js"></script>
+<script>
+  $(".label-wrap").on('click','.label',function () {
+      if($(this).hasClass('add')){
+          //.....弹窗
+      }else{
+          $(this).siblings().removeClass("on");
+          $(this).addClass('on');
+          $(this).parent().hide();
+          $(this).parent().next().show();
+      }
+  })
+  $(".table-wrap").on('click','.control-close',function () {
+      $(this).parents('.table-wrap').hide().prev().show();
+  })
+</script>
+
+</html>

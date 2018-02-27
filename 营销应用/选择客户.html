@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/DMPbase.css"/>
+    <link rel="stylesheet" href="../css/DmpFine.css"/>
+    <link rel="stylesheet" href="../js/My97DatePicker/skin/WdatePicker.css"/>
+    <style>
+        .up {
+            background: url(../images/slideUp.png) center no-repeat;
+        }
+        .gcz-box-body .xzkq-icon {
+            float: left;
+            width: 50px;
+            margin: 225px 30px;
+            height: 50px;
+            background: url(../images/kqxz-icon.png) center no-repeat;
+        }
+        .gcz-box .sjz-info li.on .sjz-icon{
+            background-color: #FF5400;
+        }
+        .sjz-info li .sjz-icon{
+            background-color: #FFD6C2;
+            color: #fff;
+            border: 0px;
+        }
+        .sjz-info li.on .sjz-text{
+            color: #FF5400;
+        }
+        .sjz-info li .sjz-icon::after{
+            border-top: 1px solid #FFD6C2;
+        }
+        .cjhd .DmpFine-box-row{
+            margin-bottom: 40px;
+        }
+        .cjhd .DmpFine-textInput02{
+            width: 420px;
+        }
+        .add-item{float: left;color: #0a8ddf;cursor: pointer}
+        .return-add-item{float: left;color: #0a8ddf;cursor: pointer}
+        .DmpFine-mainBox ::-webkit-scrollbar-track
+        {
+            /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+            border-radius: 0px;
+            background-color: #F5F5F5;
+            box-sizing: border-box;
+        }
+
+        .DmpFine-mainBox ::-webkit-scrollbar
+        {
+            width: 6px;
+            background-color: #F5F5F5;
+            box-sizing: border-box;
+        }
+
+        .DmpFine-mainBox ::-webkit-scrollbar-thumb
+        {
+            border-radius: 4px;
+            /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+<div class="DmpFine-title">
+    <div class="DmpFine-titleLeft DmpFine-textcolor3">
+        <a href="javaScript:;">新增活动</a>
+    </div>
+    <div class="DmpFine-box-titleRight"><span class="delbtn">x</span></div>
+</div>
+<div style="height: 600px;overflow-y: auto">
+    <div class="DmpFine-mainBox" id="xzhd">
+        <!--过程轴盒子-->
+        <div class="gcz-box">
+            <ul class="sjz-info clearfix">
+                <li class="on">
+                    <p><span class="sjz-icon">1</span></p>
+                    <p><span class="sjz-text">选择客户</span></p>
+                </li>
+                <li>
+                    <p><span class="sjz-icon">2</span></p>
+                    <p><span class="sjz-text">选择项目</span></p>
+                </li>
+                <li>
+                    <p><span class="sjz-icon">3</span></p>
+                    <p><span class="sjz-text">推送设置</span></p>
+                </li>
+            </ul>
+        </div>
+
+        <!--选择客户start-->
+        <div class="gcz-box-body" id="gcz-box-body1" style="border: 0px">
+            <div class="sh-box-body pt10 clearfix">
+                <div class="DmpFine-box clearfix fl" style="width:calc(50% - 55px)">
+                    <div class="DmpFine-box-title">
+                        <div class="DmpFine-box-titleLeft">
+                            <div class="DmpFine-searchInput01 clearfix fr mt7" style="width:250px;border: 0px">
+                                <span class="search-icon"></span>
+                                <input id="searchVal" placeholder="请输入客群名称进行搜索" type="search" style="border: 0px">
+                            </div>
+                        </div>
+                        <div class="DmpFine-box-titleRight">
+
+                        </div>
+                    </div>
+                    <div class="DmpFine-box-body clearfix" style="height: 410px;overflow: auto;">
+                        <div class="DmpFine-tree" id="DmpFine-tree1">
+                            <!--<div class="DmpFine-tree-row ctrl">
+                                <b class="selectcheckbox allpeople" uuid="all"></b><b class="selecttext">所有客户</b><span class="totoggle-icon"></span>
+                            </div>-->
+                            <div class="tree-body" id="xzkq">
+                                <div class="DmpFine-tree-row ctrl" >
+                                    <b class="slide"></b><b class="selectcheckbox" uuid="1"></b><b class="selecttext">myhomef.cn</b><span class="totoggle-icon"></span>
+                                </div>
+                                <div class="DmpFine-tree-rowSon">
+                                    <div class="DmpFine-tree-row ctrl">
+                                        <b class="slide"></b><b class="selectcheckbox" uuid="101"></b><b class="selecttext">人和天地项目</b><span class="totoggle-icon"></span>
+                                    </div>
+                                    <div class="DmpFine-tree-row ctrl">
+                                        <b class="slide"></b><b class="selectcheckbox" uuid="102"></b><b class="selecttext">邓甲项目</b><span class="totoggle-icon"></span>
+                                    </div>
+                                    <div class="DmpFine-tree-row ctrl">
+                                        <b class="slide"></b><b class="selectcheckbox" uuid="103"></b><b class="selecttext">农利项目</b><span class="totoggle-icon"></span>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="DmpFine-tree-row ctrl" >
+                                    <b class="slide"></b><b class="selectcheckbox" uuid="2"></b><b class="selecttext">0006677.com</b><span class="totoggle-icon"></span>
+                                </div>
+
+
+                                <div class="DmpFine-tree-rowSon">
+                                    <div class="DmpFine-tree-row ctrl">
+                                        <b class="slide"></b><b class="selectcheckbox" uuid="201"></b><b class="selecttext">人和天地项目</b><span class="totoggle-icon"></span>
+                                    </div>
+                                    <div class="DmpFine-tree-row ctrl">
+                                        <b class="slide"></b><b class="selectcheckbox" uuid="202"></b><b class="selecttext">邓甲项目</b><span class="totoggle-icon"></span>
+                                    </div>
+                                    <div class="DmpFine-tree-row ctrl">
+                                        <b class="slide"></b><b class="selectcheckbox" uuid="203"></b><b class="selecttext">农利项目</b><span class="totoggle-icon"></span>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="DmpFine-tree-row ctrl" >
+                                    <b class="slide"></b><b class="selectcheckbox" uuid="3"></b><b class="selecttext">美好生活</b><span class="totoggle-icon"></span>
+                                </div>
+                                <div class="DmpFine-tree-rowSon">
+                                    <div class="DmpFine-tree-row ctrl">
+                                        <b class="slide"></b><b class="selectcheckbox" uuid="301"></b><b class="selecttext">总经理办公室</b><span class="totoggle-icon"></span>
+                                    </div>
+                                    <div class="DmpFine-tree-row ctrl">
+                                        <b class="slide"></b><b class="selectcheckbox" uuid="302"></b><b class="selecttext">基础物业</b><span class="totoggle-icon"></span>
+                                    </div>
+                                    <div class="DmpFine-tree-row ctrl" uid="10">
+                                        <b class="slide"></b><b class="selectcheckbox" uuid="303"></b><b class="selecttext">生活配套</b><span class="totoggle-icon"></span>
+                                    </div>
+                                    <div class="DmpFine-tree-rowSon">
+                                        <div class="DmpFine-tree-row ctrl">
+                                            <b class="slide"></b><b class="selectcheckbox" uuid="3031"></b><b class="selecttext">总经</b><span class="totoggle-icon"></span>
+                                        </div>
+                                        <div class="DmpFine-tree-row ctrl">
+                                            <b class="slide"></b><b class="selectcheckbox" uuid="3032"></b><b class="selecttext">基础</b><span class="totoggle-icon"></span>
+                                        </div>
+                                        <div class="DmpFine-tree-row ctrl">
+                                            <b class="slide"></b><b class="selectcheckbox" uuid="3033"></b><b class="selecttext">生活</b><span class="totoggle-icon"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="DmpFine-tree-row ctrl">
+                                    <b class="slide"></b><b class="selectcheckbox" uuid="4"></b><b class="selecttext" uuid="16">美好集团投资有限公司</b><span class="totoggle-icon"></span>
+                                </div>
+                                <div class="DmpFine-tree-rowSon">
+                                    <div class="DmpFine-tree-row ctrl">
+                                        <b class="slide"></b><b class="selectcheckbox" uuid="401"></b><b class="selecttext">集团本部</b><span class="totoggle-icon"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 110px;height: 500px;float:left">
+                    <div class="xzkq-icon"></div>
+                </div>
+                <div class="DmpFine-box clearfix fl" style="width:calc(50% - 55px)">
+                    <div class="DmpFine-box-title">
+                        <div class="DmpFine-box-titleLeft">
+                            <div class="DmpFine-box-titleLeftText1">已选择客群</div>
+                        </div>
+                    </div>
+                    <div class="DmpFine-box-body clearfix">
+                        <div class="DmpFine-tree" id="DmpFine-tree2" style="height: 410px;overflow: auto;">
+                            <div class="tree-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--选择客户end-->
+
+        <!--选择项目start-->
+        <div class="gcz-box-body" id="gcz-box-body2" style="display: none;border: 0px">
+            <div class="sh-box-body pt10 clearfix">
+                <div class="DmpFine-box clearfix fl" style="width:calc(50% - 55px)">
+                    <div class="DmpFine-box-title">
+                        <div class="DmpFine-box-titleLeft">
+                            <div class="DmpFine-searchInput01 clearfix fr mt7"  style="width:250px;border: 0px">
+                                <span class="search-icon"></span>
+                                <input  placeholder="请输入项目名称进行搜索" id="searchVal2" type="search" style="border: 0px">
+                            </div>
+                        </div>
+                        <div class="DmpFine-box-titleRight">
+
+                        </div>
+                    </div>
+                    <div class="DmpFine-box-body clearfix" style="height: 410px;overflow: auto;">
+                        <div class="DmpFine-tree" id="DmpFine-tree3">
+                            <!--<div class="DmpFine-tree-row ctrl">
+                                <b class="selectcheckbox allpeople" uuid="all"></b><b class="selecttext">所有客户</b><span class="totoggle-icon"></span>
+                            </div>-->
+                            <div class="tree-body" >
+                                <div class="DmpFine-tree-row ctrl" >
+                                    <b class="selectcheckbox" uuid="1"></b><b class="selecttext">myhomef.cn</b><span class="totoggle-icon"></span>
+                                </div>
+
+                                <div class="DmpFine-tree-row ctrl" >
+                                    <b class="selectcheckbox" uuid="3"></b><b class="selecttext">0006677.com</b><span class="totoggle-icon"></span>
+                                </div>
+                                <div class="DmpFine-tree-row ctrl" >
+                                    <b class="selectcheckbox" uuid="7"></b><b class="selecttext">美好生活</b><span class="totoggle-icon"></span>
+                                </div>
+                                <div class="DmpFine-tree-row ctrl">
+                                    <b class="selectcheckbox" uuid="16"></b><b class="selecttext" uuid="16">美好集团投资有限公司</b><span class="totoggle-icon"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 110px;height: 500px;float:left">
+                </div>
+                <div class="DmpFine-box clearfix fl" id="xyxm" style="width:calc(50% - 55px)">
+                    <div class="DmpFine-box-title">
+                        <div class="DmpFine-box-titleLeft">
+                            <div class="DmpFine-searchInput01 clearfix fr mt7"  style="width:250px;border: 0px">
+                                <span class="search-icon"></span>
+                                <input  placeholder="请输入项目名称进行搜索" id="searchVal3" type="search" style="border: 0px">
+                            </div>
+                        </div>
+                        <div class="DmpFine-box-titleRight">
+                            <span class="add-item">新增</span>
+                        </div>
+                    </div>
+                    <div class="DmpFine-box-body clearfix">
+                        <div class="DmpFine-tree" id="DmpFine-tree4" style="height: 410px;overflow: auto;">
+                            <div class="tree-body">
+                                <div class="DmpFine-tree-row ctrl" >
+                                    <b class="selectcheckbox" uuid="1"></b><b class="selecttext">未接来电外呼项目（陌拜外呼）</b><span class="totoggle-icon"></span>
+                                </div>
+
+                                <div class="DmpFine-tree-row ctrl" >
+                                    <b class="selectcheckbox" uuid="3"></b><b class="selecttext">未接来电外呼项目（陌拜外呼）</b><span class="totoggle-icon"></span>
+                                </div>
+                                <div class="DmpFine-tree-row ctrl" >
+                                    <b class="selectcheckbox" uuid="7"></b><b class="selecttext">未接来电外呼项目（陌拜外呼）</b><span class="totoggle-icon"></span>
+                                </div>
+                                <div class="DmpFine-tree-row ctrl">
+                                    <b class="selectcheckbox" uuid="16"></b><b class="selecttext">未接来电外呼项目（陌拜外呼）</b><span class="totoggle-icon"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="DmpFine-box clearfix fl" id="xzxm" style="width:calc(50% - 55px);display: none">
+                    <div class="DmpFine-box-title">
+                        <div class="DmpFine-box-titleLeft">
+
+                        </div>
+                        <div class="DmpFine-box-titleRight">
+                            <span class="return-add-item ">从现有任务中选择</span>
+                        </div>
+                    </div>
+                    <div class="DmpFine-box-body clearfix">
+                        <div class="DmpFine-tree"  style="height: 410px;overflow: auto;">
+                            <div class="tree-body" style="height: 410px;padding-top: 20px">
+                                <div class="DmpFine-box-row fl  w100" style="margin-top: 20px">
+                                    <div class="DmpFine-box-row-left">
+                                        <span class="DmpFine-textcolor5">*</span>
+                                        任务名称
+                                    </div>
+                                    <div class="DmpFine-box-row-right">
+                                        <input type="text" class="DmpFine-textInput02">
+                                    </div>
+                                </div>
+                                <div class="DmpFine-box-row fl">
+                                    <div class="DmpFine-box-row-left">
+                                        <span class="DmpFine-textcolor5">*</span>
+                                        外呼类型
+                                    </div>
+                                    <div class="DmpFine-box-row-right ">
+                                        <div class="dmp-select DmpFine-selectW02" id="DmpFine_select1">
+                                            <input class="type_id" name="dateTye" type="hidden" value="0">
+                                            <div class="font_type_id">子分类</div>
+                                            <span></span>
+                                            <div class="dmp-select-option" id="DmpFine_select2" style="display: none;">
+                                                <p data-v="0">一周内</p>
+                                                <p data-v="1">一个月内</p>
+                                                <p data-v="2">三个月内</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--选择项目end-->
+
+        <!--投放配置start-->
+        <div class="gcz-box-body" id="gcz-box-body3" style="display: none;width: 600px;margin: 0 auto;border: 0px;min-height: 300px;">
+
+            <!--执行渠道盒子-数字营销系统-->
+            <div class="zxqd-box bort" style="border: 0px">
+                <div class="sh-box-body pt10">
+                    <div class="cjhd" style="width: 600px;margin-top: 80px">
+                        <div class="DmpFine-box-row fl w100 clearfix">
+                            <div class="DmpFine-box-row-left">
+                                <span class="DmpFine-textcolor5">*</span>任务名称
+                            </div>
+                            <div class="DmpFine-box-row-right">
+                                <input  type="text" class="DmpFine-textInput02"/>
+                            </div>
+                        </div>
+                        <div class="DmpFine-box-row fl w100 clearfix">
+                            <div class="DmpFine-box-row-left">
+                                <span class="DmpFine-textcolor5">*</span>开始时间
+                            </div>
+                            <div class="DmpFine-box-row-right">
+                                <input type="text" class="DmpFine-textInput02"/>
+                            </div>
+                        </div>
+                        <div class="DmpFine-box-row fl w100 clearfix">
+                            <div class="DmpFine-box-row-left">
+                                <span class="DmpFine-textcolor5">*</span>结束时间
+                            </div>
+                            <div class="DmpFine-box-row-right">
+                                <input  type="text" class="DmpFine-textInput02"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--活动配置end-->
+        <div class="DmpFine-box-footer">
+            <button class="DmpFine-btn09" onclick="toprev(this)" style="display: none;">上一步</button>
+            <button class="DmpFine-btn01" onclick="tonext(this)">下一步</button>
+            <button class="DmpFine-btn01"  style="display: none;">保存</button>
+            <button class="DmpFine-btn01"  style="display: none;">提交</button>
+            <button class="DmpFine-btn02">取消</button>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../js/jquery-2.2.4.min.js"></script>
+<script src="../js/DmpFine.js"></script>
+<script src="../js/to-english.js"></script>
+<script>
+    /*创建活动-start*/
+    new SlidingLayer($("#DmpFine_select1"), $("#DmpFine_select2"));
+    new SlidingLayer($("#DmpFine_select3"), $("#DmpFine_select4"));
+    new SlidingLayer($("#DmpFine_select5"), $("#DmpFine_select6"),true);
+    new SlidingLayer($("#DmpFine_select7"), $("#DmpFine_select8"));
+    $(".dmp-select-option p").click(function () {
+        $(this).parent().prev().prev().prev().val($(this).data("v"));
+        $(this).parent().prev().prev().html($(this).html());
+        $(this).parent().hide();
+    });
+
+    /*下面3个是下拉多选框*/
+    $('.dmp-select').on('click','.dmp-select-footer .DmpFine-btn01',function(){
+        var _this = this;
+        if($(this).parents('.dmp-select-option').find('.allselect').hasClass('selected')){
+            $(this).parents('.dmp-select').find('.font_type_id').text('全部');
+            $(this).parents('.dmp-select').find('.type_id').val('');
+        }else{
+            var text='';
+            var hidetextarr = [];
+            $(this).parents('.dmp-select-option').find('.dmp-select-sonbox .selected').each(function(){
+                text += $(this).next().text();
+                hidetextarr.push( $(this).attr('id'));
+            })
+            if(!text.trim() || $(this).parents('.dmp-select').find('.allselect').hasClass('selected')){
+                $(this).parents('.dmp-select').find('.font_type_id').text('全部');
+                $(this).parents('.dmp-select').find('.type_id').val('');
+            }else{
+                $(this).parents('.dmp-select').find('.font_type_id').text(text);
+                $(this).parents('.dmp-select').find('.type_id').val(hidetextarr.join(','));
+            }
+        }
+        _this.timer = setTimeout(function () {
+            $(_this).parents('.dmp-select-option').hide();
+            if($(_this).parents('.dmp-select').find('.dmp-select-option-quick').length>0){
+                $(_this).parents('.dmp-select').find('input[type="search"]').val('');
+                $(_this).parents('.dmp-select-option-quick').find('.dmp-select-sonbox div').show();
+            }
+        }, 300);
+    })
+    $('.dmp-select').on('click','.dmp-select-footer .DmpFine-btn02',function(){
+        $(this).parents('.dmp-select').find('.selectcheckbox').removeClass('selected');
+    })
+    $('.dmp-select').on('click','.selectcheckbox',function(){
+        if($(this).hasClass('allselect')){     //判断自身是否全选
+            if($(this).hasClass('selected')){  //判断自身是否选中
+                $(this).removeClass('selected').parent().next().find('.selectcheckbox').removeClass('selected');
+            }else{
+                $(this).addClass('selected').parent().next().find('.selectcheckbox').addClass('selected');
+            }
+        }else{
+            var sonbox = $(this).parents('.dmp-select-sonbox');
+            if(!$(this).hasClass('selected')){
+                sonbox.prev().find('.allselect').removeClass('selected');
+            }else{
+                if(sonbox.find('.selectcheckbox').length === sonbox.find('.selected').length){
+                    sonbox.prev().find('.allselect').addClass('selected');
+                }
+            }
+        }
+    })
+    function checkbox(){  //初始化树列表checkbox加样式
+        $('.tree-body').on('click','.selectcheckbox',function(event){
+            var siblingobj = $(this).parent().siblings('.DmpFine-tree-row').children('.selectcheckbox');
+            if(!$(this).hasClass('selected')){   //没选中状态
+                $(this).addClass('selected');
+                if($(this).parent().next().hasClass('DmpFine-tree-rowSon')){
+                    $(this).parent().next().find('.selectcheckbox').addClass('selected');
+                }
+                diguiAdd(this);
+            }else{
+                $(this).removeClass('selected');
+                if($(this).parent().next().hasClass('DmpFine-tree-rowSon')){
+                    $(this).parent().next().find('.selectcheckbox').removeClass('selected');
+                }
+                $(this).parents('.DmpFine-tree-rowSon').prev().find('.selectcheckbox').removeClass('selected');
+            }
+        })
+    }
+    DmpFineTreeInit1('..');
+
+
+    /*创建活动-end*/
+    /*选择客群-start*/
+    xzkq();
+    function xzkq(){
+        checkbox();
+        $('#gcz-box-body1 #DmpFine-tree1').on('click','.selectcheckbox',function(){
+            var sonBox = $(this).parents('.DmpFine-tree-rowSon');
+            if($(this).hasClass('selected')){
+                var exist = $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').length;
+                if(exist>0){
+                    sonBox.find('.selectcheckbox.selected').each(function(){
+                        $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').parent().show().parents('.DmpFine-tree-rowSon').prev().show();
+                    })
+                    if(sonBox.length<1){
+                        $(this).parent().next().find('.selectcheckbox').each(function(){
+                            $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').parent().show().parents('.DmpFine-tree-rowSon').prev().show();
+                        })
+                    }
+                }else{
+                    if(sonBox.length>0){
+                        var obj = sonBox.last().clone(true);
+                        obj.find('.DmpFine-tree-row').hide();
+                        $('#DmpFine-tree2 .tree-body').append(sonBox.last().prev().clone(true));
+                        $('#DmpFine-tree2 .tree-body').append(obj);
+                        sonBox.find('.selectcheckbox.selected').each(function(){
+                            $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').parent().show().parents('.DmpFine-tree-rowSon').prev().show();
+                        })
+                    }else{
+                        var obj = $(this).parent().next().clone(true);
+                        obj.find('.DmpFine-tree-row').hide();
+                        var obj1 =$('#DmpFine-tree2 .tree-body').append($(this).parent().clone(true));
+                        var obj2 =$('#DmpFine-tree2 .tree-body').append(obj);
+                        obj1.find('.selectcheckbox.selected').each(function(){
+                            $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').parent().show().parents('.DmpFine-tree-rowSon').prev().show();
+                        })
+                        obj2.find('.selectcheckbox.selected').each(function(){
+                            $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').parent().show().parents('.DmpFine-tree-rowSon').prev().show();
+                        })
+                    }
+                }
+            }else{
+                if(sonBox.length>0){  //是否是最后一层
+                    /*console.log(sonBox.find('.selectcheckbox.selected').length)
+                    console.log(sonBox.find('.selectcheckbox.selected').length)*/
+                    if(sonBox.last().find('.selectcheckbox.selected').length>0){ //不需要删除整个
+                        $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').parent().hide();
+                        if(sonBox.eq(0).find('.selectcheckbox.selected').length<1){
+                            $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').parent().hide().parent().prev().hide();
+                        }
+                    }else{
+                        if(sonBox.eq(0).find('.selectcheckbox.selected')>0){
+                            $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').parent().hide().prev().hide();
+                        }else{
+                            var tree2sonBox = $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').parents('.DmpFine-tree-rowSon');
+                            tree2sonBox.last().prev().remove();
+                            tree2sonBox.last().remove();
+                        }
+                    }
+                }else{
+                    var first = $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').parent();
+                    first.next().remove();
+                    first.remove();
+                }
+                if($(this).parent().next().hasClass('DmpFine-tree-rowSon')){
+                    $('#DmpFine-tree2 .DmpFine-tree-row .selectcheckbox[uuid='+$(this).attr('uuid')+']').parent().next().find('.DmpFine-tree-row').hide();
+                }
+            }
+        })
+        $('#gcz-box-body1 #DmpFine-tree1').on('click','.totoggle-icon',function(){
+            if(!$(this).siblings('.selectcheckbox').hasClass('selected')){
+                $(this).siblings('.selectcheckbox').click();
+            }
+        })
+        $(".xzkq-icon").click(function () {
+            $("#xzkq").find("b.selectcheckbox").each(function (index,element) {
+                if(!$(element).hasClass("selected")){
+                    $(this).click();
+                }
+            })
+        })
+        $('#gcz-box-body1 #DmpFine-tree2').on('click','.totoggle-icon',function(){
+            var tree1Btn = $('#gcz-box-body1 #DmpFine-tree1 .selectcheckbox[uuid='+$(this).siblings('.selectcheckbox').attr('uuid')+']');
+            if(tree1Btn.parent().next().hasClass('DmpFine-tree-rowSon')){
+                if(tree1Btn.parent().next().find('.selectcheckbox.selected').length>0&&!tree1Btn.hasClass('selected')){
+                    tree1Btn.click();
+                }
+            }
+            $('#gcz-box-body1 #DmpFine-tree1 .selectcheckbox[uuid='+$(this).siblings('.selectcheckbox').attr('uuid')+']').click();
+        })
+        $('#gcz-box-body1 .allpeople').click(function(){
+            if($(this).hasClass('selected')){
+                $(this).removeClass('selected');
+                $('#DmpFine-tree1 .tree-body,#DmpFine-tree2 .tree-body').show();
+                $('#DmpFine-tree2 .allpeople').parent().remove();
+            }else{
+                $(this).addClass('selected');
+                $('#DmpFine-tree1 .tree-body,#DmpFine-tree2 .tree-body').hide();
+                var text = '<div class="DmpFine-tree-row ctrl"><b class="selectcheckbox allpeople" uuid="all"></b><b class="selecttext">所有客户</b><span class="totoggle-icon"></span> </div>';
+                $('#DmpFine-tree2 .tree-body').before(text);
+            }
+        })
+        var arrobj1=[];
+        $('#searchVal').on('input',function(e){
+            e.stopPropagation();
+            var _this = this;
+            if($(this).val() != ''){
+                $('#DmpFine-tree1 .tree-body').find('.DmpFine-tree-row').hide();
+                $('#DmpFine-tree1 .tree-body').find('.DmpFine-tree-rowSon .DmpFine-tree-row').each(function(){
+                    if(flagMath($(_this).val(),$(this).find('.selecttext').text())){
+                        $(this).show();
+                    }else{
+                        $(this).hide();
+                    }
+                    var obj = $(this).parents('.DmpFine-tree-rowSon');
+                    if(obj.css('display') == 'none'){
+                        obj.show();
+                        arrobj1.push(obj);
+                    }
+                })
+                $('#DmpFine-tree1 .tree-body').find('.DmpFine-tree-rowSon .DmpFine-tree-row .selecttext:contains('+$(_this).val()+')').parent().show();
+            }else{
+                $('#DmpFine-tree1 .tree-body').find('.DmpFine-tree-row').show();
+                for(var i=0;i<arrobj1.length;i++){
+                    arrobj1[i].hide();
+                    arrobj1.length=0;
+                }
+            }
+        })
+    }
+    /*选择客群-end*/
+//    创建项目-start
+    $('#searchVal2').on('input',function(e){
+//        var arrobj2 = []
+        e.stopPropagation();
+        var _this = this;
+        if($(this).val() != ''){
+//            $('#DmpFine-tree3 .tree-body').find('.DmpFine-tree-row').hide();
+            $('#DmpFine-tree3 .tree-body').find('.DmpFine-tree-row').each(function(i,e){
+                if(flagMath($(_this).val(),$(e).find('.selecttext').text())){
+                    $(e).show();
+                }else{
+                    $(e).hide();
+                }
+            })
+        }else{
+            $('#DmpFine-tree3 .tree-body').find('.DmpFine-tree-row').show();
+        }
+    })
+    $('#searchVal3').on('input',function(e){
+//        var arrobj2 = []
+        e.stopPropagation();
+        var _this = this;
+        if($(this).val() != ''){
+//            $('#DmpFine-tree3 .tree-body').find('.DmpFine-tree-row').hide();
+            $('#DmpFine-tree4 .tree-body').find('.DmpFine-tree-row').each(function(i,e){
+                if(flagMath($(_this).val(),$(e).find('.selecttext').text())){
+                    $(e).show();
+                }else{
+                    $(e).hide();
+                }
+            })
+        }else{
+            $('#DmpFine-tree4 .tree-body').find('.DmpFine-tree-row').show();
+        }
+    })
+    $('#DmpFine-tree3').on('click','.selectcheckbox',function () {
+        $('#DmpFine-tree3').find('.selectcheckbox').removeClass('selected');
+        $(this).addClass('selected')
+    })
+    $('#DmpFine-tree4').on('click','.selectcheckbox',function () {
+        $('#DmpFine-tree4').find('.selectcheckbox').removeClass('selected');
+        $(this).addClass('selected')
+    })
+    $('.add-item').click(function () {
+        $('#xyxm').hide();
+        $('#xzxm').show();
+    })
+    $('.return-add-item').click(function () {
+        $('#xyxm').show();
+        $('#xzxm').hide();
+    })
+//    创建项目-end
+    /*活动配置-start*/
+    hdpz();
+    function hdpz(){
+        /*给定时群发按钮点击事件*/
+        $('#gcz-box-body3 .selectcheckbox').click(function(){
+            $(this).toggleClass('selected');
+        })
+        /*执行渠道的切换事件*/
+        $('#zxqd .radio').click(function(){
+            $('#gcz-box-body3 .zxqd-box').eq($(this).index()).show().siblings('.zxqd-box').hide();
+        })
+        /*活动时间设置-定时群发事件*/
+        $('.zxqd-box .radio').click(function(){
+            $(this).parents('.sh-box-body').find('.sjxz-box').eq($(this).index()).show().siblings('.sjxz-box').hide();
+        })
+        $('#gcz-box-body4').on('click','.sp-box-til a',function(){
+            $(this).parents('.sp-box').find('.sp-box-btns').addClass('on');
+        })
+        $('.sj-font').click(function(){
+            $(this).next().show();
+        })
+        $('.sj-select p').click(function(){
+            $(this).parent().hide();
+            $(this).parents('.sj-text').find('.sj-font').text($(this).text());
+        })
+        $('.sj-text').on('mouseleave',function(){
+            $(this).find('.sj-select').hide();
+        })
+    }
+    /*活动配置-end*/
+
+    /*步骤*/
+    /*上一步*/
+    function toprev(obj){
+        var len = $('.gcz-box .sjz-info li.on').length;
+        if(len<=2){
+            $(obj).hide();
+        }
+        if(len == 3){
+            $('.DmpFine-box-footer .DmpFine-btn01').hide().eq(0).show();
+        }
+        $('.gcz-box .sjz-info li.on').last().removeClass('on');
+        $('.gcz-box-body').eq(len-2).show();
+        $('.gcz-box-body').eq(len-1).hide();
+    }
+    /*下一步*/
+    function tonext(obj){
+        var len = $('.gcz-box .sjz-info li.on').length;
+        if(len>1){
+            $(obj).hide();
+            $(obj).siblings('.DmpFine-btn01').show();
+        }
+        $('.gcz-box .sjz-info li.on').next().addClass('on');
+        $('.DmpFine-box-footer .DmpFine-btn09').show();
+        $('.gcz-box-body').eq(len-1).hide();
+        $('.gcz-box-body').eq(len).show();
+    }
+
+</script>
+</html>

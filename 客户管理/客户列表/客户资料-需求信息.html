@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>客户资料-需求信息</title>
+	<link rel="stylesheet" href="../../css/DMPbase.css"/>
+    <link rel="stylesheet" href="../../css/DmpFine.css"/>
+    <link rel="stylesheet" href="../../js/My97DatePicker/skin/WdatePicker.css"/>
+	<style>
+		.mt12{margin-top: 12px;}
+		.font-size14{font-size: 14px;}
+		.toggle-til li{line-height: 40px;height: 40px;text-align: center;color: #cccccc;cursor: pointer;font-size: 16px;font-weight: 600;position: relative;}
+		.toggle-til li:first-child:after{height: 30px;right: 0;top: 5px;position: absolute;border-right: 1px solid #dfdfdf;content: '';}
+		.toggle-til li.on{color: #ff5400;}
+		.toggle-tip{line-height: 40px;text-align: center;font-size: 16px;}
+		.relation-wrap{transition: right .3s}
+		.relation-wrap.on{right: 500px;}
+		.DmpFine-box-body {
+			position: relative;
+			border: 1px solid #dfdfdf;
+			border-top: 0;
+			background: #fff;
+		}
+		.DmpFine-box{
+			border: 0px;
+			/*background: url(../../images/bg_main_left.png) repeat-y #f5f5f5;*/
+		}
+		.main_cont {
+			width: 1080px;
+			/*background: url(../../images/bg_main_left.png) repeat-y #f5f5f5;*/
+			/* min-height: calc(100vh - 20px); */
+			padding-bottom: 20px;
+			min-height: 100%;
+		}
+		.list-table-body ul li{
+			width: 50%;
+		}
+		.toggleTable2-btn{
+			margin-bottom: 30px;
+		}
+		.toggleTable2-btn span{
+			background: #fff;
+			border: 0px;
+			border-bottom: 1px solid #dfdfdf;
+		}
+		.toggleTable2-btn span.on{
+			border: 1px solid #dfdfdf;
+			border-bottom: 0px;
+			border-top: 2px solid #FF5400;
+		}
+		.toggleTable2-btn{
+			border: 0px;
+			border-radius: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main_cont">
+		<div class="DmpFine-title" style="width: 1080px">
+			<div class="DmpFine-titleLeft DmpFine-textcolor3">
+				<a href="javaScript:;">客户资料</a>
+			</div>
+			<div class="DmpFine-titleRight">
+				<button class="DmpFine-btn04">返回</button>
+			</div>
+		</div>
+
+		<div class="DmpFine-mainBox">
+			<div class="toggleTab clearfix">
+				<!--资料卡模式-->
+
+				<!--toggleTable2-->
+				<div class="toggleTable2-wrap">
+					<div class="toggleTable2-btn fl">
+						<span>基本资料</span>
+						<span>接触记录</span>
+						<span>需求信息</span>
+						<span>所属客群</span>
+
+					</div>
+					<div class="toggleTable2-btn fl" style="width:calc(100% - 320px);height: 42px;border-bottom: 1px solid #dfdfdf">
+					</div>
+					<div class="toggleTable2-con">
+						<div class="DmpFine-box clearfix">
+							<div class="toggleTable2-nav"></div>
+							<div class="DmpFine-box-body clearfix" style="border: 0;border-left: 1px solid #dfdfdf">
+								<div class="DmpFine-table">
+									<div class="list-table-body" >
+										<ul class="clearfix" style="border: 0px">
+											<li>
+												<span>所属项目</span><span></span>
+											</li>
+											<li>
+												<span>置业顾问</span><span>&nbsp;</span>
+											</li>
+											<li>
+												<span>需求来源</span><span>&nbsp;</span>
+											</li>
+											<li>
+												<span>置业目的</span><span>&nbsp;</span>
+											</li>
+											<li>
+												<span>需求类型</span><span>&nbsp;</span>
+											</li>
+											<li>
+												<span>需求户型</span><span>&nbsp;</span>
+											</li>
+											<li>
+												<span>需求面积</span><span>&nbsp;</span>
+											</li>
+											<li>
+												<span>需求楼层</span><span>&nbsp;</span>
+											</li>
+											<li>
+												<span>需求总价</span><span>&nbsp;</span>
+											</li>
+											<li>
+												<span>预算单价</span><span>&nbsp;</span>
+											</li>
+											<li>
+												<span>关注热点</span><span>&nbsp;</span>
+											</li>
+											<li>
+												<span style="height: 30px"></span><span>&nbsp;</span>
+											</li>
+										</ul>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="DmpFine-box clearfix">
+							<div class="toggleTable2-nav">
+							</div>
+							<div class="DmpFine-box-body clearfix">
+								<div class="DmpFine-table">
+									<table>
+										<thead>
+										<tr>
+											<td>序号</td>
+											<td>项目名称</td>
+											<td>接触方式</td>
+											<td>跟进内容</td>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td>1</td>
+											<td>中原御品</td>
+											<td>来电</td>
+											<td>来电</td>
+										</tr>
+										<tr>
+											<td colspan="4" style="border: 0px">
+												<div class="DmpFine-goPage clearfix">
+													<div class="goPage clearfix">
+														<a href="javascript:void(0);" class="goPage-box noPrveAndNext">|&lt;</a>
+														<a href="javascript:void(0);" class="goPage-box noPrveAndNext">上一页</a>
+														<div class="pageNum"><a href="javaScript:void(0);" class="goPage-box selected" no_data="0">1</a>&nbsp;<a href="javaScript:void(0);" class="goPage-box" no_data="0">2</a>&nbsp;<a href="javaScript:void(0);" class="goPage-box" no_data="0">3</a></div>
+														<a href="javascript:void(0);" class="goPage-box" page="2">下一页</a>
+														<a href="javascript:void(0);" class="goPage-box" page="3">&gt;|</a>
+														<input class="goPage-input" type="text" name="cpage" onkeyup="this.value=this.value.replace(/\D/g,'')">
+														<a class="goPage-box" href="javascript:void(0);">跳转</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="DmpFine-box clearfix">
+							<div class="toggleTable2-nav">
+							</div>
+							<div class="DmpFine-box-body clearfix">
+								<div class="DmpFine-table">
+									<table>
+										<thead>
+										<tr>
+											<td>所属项目</td>
+											<td>置业顾问</td>
+											<td>需求来源</td>
+											<td>登记时间</td>
+											<td>操作</td>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td>1</td>
+											<td>中原御品</td>
+											<td>来电</td>
+											<td>来电</td>
+											<td class="ctrl"><a href="">来电</a></td>
+										</tr>
+										<tr>
+											<td colspan="5" style="border: 0px">
+												<div class="DmpFine-goPage clearfix">
+													<div class="goPage clearfix">
+														<a href="javascript:void(0);" class="goPage-box noPrveAndNext">|&lt;</a>
+														<a href="javascript:void(0);" class="goPage-box noPrveAndNext">上一页</a>
+														<div class="pageNum"><a href="javaScript:void(0);" class="goPage-box selected" no_data="0">1</a>&nbsp;<a href="javaScript:void(0);" class="goPage-box" no_data="0">2</a>&nbsp;<a href="javaScript:void(0);" class="goPage-box" no_data="0">3</a></div>
+														<a href="javascript:void(0);" class="goPage-box" page="2">下一页</a>
+														<a href="javascript:void(0);" class="goPage-box" page="3">&gt;|</a>
+														<input class="goPage-input" type="text" name="cpage" onkeyup="this.value=this.value.replace(/\D/g,'')">
+														<a class="goPage-box" href="javascript:void(0);">跳转</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="DmpFine-box clearfix">
+							<div class="toggleTable2-nav">
+							</div>
+							<div class="DmpFine-box-body clearfix">
+								<div class="DmpFine-table">
+									<table>
+										<thead>
+										<tr>
+											<td>所属客群</td>
+											<td>客群人数</td>
+											<td>需求来源</td>
+											<td>创建时间</td>
+											<td>操作</td>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td>1</td>
+											<td>中原御品</td>
+											<td>来电</td>
+											<td>来电</td>
+											<td class="ctrl"><a href="">来电</a></td>
+										</tr>
+										<tr>
+											<td colspan="5" style="border: 0px">
+												<div class="DmpFine-goPage clearfix">
+													<div class="goPage clearfix">
+														<a href="javascript:void(0);" class="goPage-box noPrveAndNext">|&lt;</a>
+														<a href="javascript:void(0);" class="goPage-box noPrveAndNext">上一页</a>
+														<div class="pageNum"><a href="javaScript:void(0);" class="goPage-box selected" no_data="0">1</a>&nbsp;<a href="javaScript:void(0);" class="goPage-box" no_data="0">2</a>&nbsp;<a href="javaScript:void(0);" class="goPage-box" no_data="0">3</a></div>
+														<a href="javascript:void(0);" class="goPage-box" page="2">下一页</a>
+														<a href="javascript:void(0);" class="goPage-box" page="3">&gt;|</a>
+														<input class="goPage-input" type="text" name="cpage" onkeyup="this.value=this.value.replace(/\D/g,'')">
+														<a class="goPage-box" href="javascript:void(0);">跳转</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--toggleTable2-->
+
+			</div>
+
+		</div>
+	</div>
+
+	
+	<script src="../../js/My97DatePicker/WdatePicker.js"></script>
+	<script src="../../js/jquery-2.2.4.min.js"></script>
+	<script src="../../js/DmpFine.js"></script>
+	<script src="../../js/wordcloud2.js"></script>
+	<script src="../../js/echarts.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			toggleTab();
+
+			
+
+			
+			//tab切换
+			$(".toggleTable2-btn span").click(function(){
+				var _index = $(this).index();
+				$(this).addClass("on").siblings().removeClass("on");
+				$(".toggleTable2-con .DmpFine-box").hide().eq(_index).show();
+			}).eq(0).trigger("click");})
+			
+
+
+	</script>
+
+</body>
+</html>

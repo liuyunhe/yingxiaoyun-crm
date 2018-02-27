@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新增、编辑一级类名</title>
+    <link rel="stylesheet" href="../../css/DMPbase.css"/>
+    <link rel="stylesheet" href="../../css/DmpFine.css"/>
+</head>
+<body>
+<div class="DmpFine-box clearfix" id="bqgl-xzbq">
+    <div class="DmpFine-box-title">
+        <div class="DmpFine-box-titleLeft">
+            <div class="DmpFine-box-titleLeftText">新增、编辑一级类名</div>
+        </div>
+        <div class="DmpFine-box-titleRight">
+            <button class="DmpFine-btn04">返回</button>
+        </div>
+    </div>
+    <div class="DmpFine-box-body clearfix">
+        <div class="DmpFine-box-row fl  mt20">
+            <div class="DmpFine-box-row-left">
+                <span class="DmpFine-textcolor5">*</span>
+                标签名称
+            </div>
+            <div class="DmpFine-box-row-right">
+                <input type="text" class="DmpFine-textInput02" style="width: 250px"/>
+            </div>
+        </div>
+
+        <div class="DmpFine-box-row fl clearfix w100" style="height:auto;">
+            <div class="DmpFine-box-row-left">
+                描述
+            </div>
+            <div class="DmpFine-box-row-right">
+                <textarea name="" id="" cols="30" rows="10" style="width: 250px;"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="DmpFine-box-footer">
+        <button class="DmpFine-btn01" onclick="hideMess()">保存</button>
+        <button class="DmpFine-btn02" onclick="hideMess()">取消</button>
+    </div>
+</div>
+</body>
+<script src="../../js/jquery-2.2.4.min.js"></script>
+<script src="../../js/DmpFine.js"></script>
+<script src="../../js/mybox-control.js"></script>
+<script>
+    DmpFineTreeInit();
+    $('.DmpFine-tree').on('click','.DmpFine-btn100',function(){
+        if($(this).hasClass('selected')){
+            $(this).removeClass('selected');
+        }else{
+            $(this).addClass('selected');
+        }
+    })
+
+</script>
+</html>
